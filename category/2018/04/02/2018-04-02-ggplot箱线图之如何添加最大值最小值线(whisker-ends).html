@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="技术,R,画图," />
 
 
 
@@ -79,17 +79,23 @@
 
 
 
-<meta name="description" content="Talk is cheap,show me your result">
-<meta name="keywords" content="Evo, Devo, Bioinfo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Evo-Devo Bird">
-<meta property="og:url" content="https://xieduo7.github.io/index.html">
+<meta name="description" content="ggplot作为R语言画图的瑞士军刀，相比于基础的R包，语法更加易于理解和掌握，不需要掌握很多的命令就能画出整洁美观的图表。比方说用ggplot来画箱线图，首先我们可以这样操作：">
+<meta name="keywords" content="技术,R,画图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ggplot箱线图之如何添加最大值最小值线(whisker-ends)">
+<meta property="og:url" content="https://xieduo7.github.io/category/2018/04/02/2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html">
 <meta property="og:site_name" content="Evo-Devo Bird">
-<meta property="og:description" content="Talk is cheap,show me your result">
+<meta property="og:description" content="ggplot作为R语言画图的瑞士军刀，相比于基础的R包，语法更加易于理解和掌握，不需要掌握很多的命令就能画出整洁美观的图表。比方说用ggplot来画箱线图，首先我们可以这样操作：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/166439-901d0d1857bd5dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/166439-fa581c058200cfa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/166439-6994ae7c13f9c28e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/166439-e9f8c9a060ab9a3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-04-02T15:56:32.141Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Evo-Devo Bird">
-<meta name="twitter:description" content="Talk is cheap,show me your result">
+<meta name="twitter:title" content="ggplot箱线图之如何添加最大值最小值线(whisker-ends)">
+<meta name="twitter:description" content="ggplot作为R语言画图的瑞士军刀，相比于基础的R包，语法更加易于理解和掌握，不需要掌握很多的命令就能画出整洁美观的图表。比方说用ggplot来画箱线图，首先我们可以这样操作：">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/166439-901d0d1857bd5dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -119,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://xieduo7.github.io/"/>
+  <link rel="canonical" href="https://xieduo7.github.io/category/2018/04/02/2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html"/>
 
 
 
 
 
-  <title>Evo-Devo Bird</title>
+  <title>ggplot箱线图之如何添加最大值最小值线(whisker-ends) | Evo-Devo Bird</title>
   
 
 
@@ -154,8 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -228,137 +233,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xieduo7.github.io/category/2018/04/03/hello-world.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Duo Xie">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/author.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Evo-Devo Bird">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/category/2018/04/03/hello-world.html" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T23:03:10+08:00">
-                2018-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -388,9 +265,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/category/2018/04/02/2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html" itemprop="url">ggplot箱线图之如何添加最大值最小值线(whisker-ends)</a></h1>
+          <h1 class="post-title" itemprop="name headline">ggplot箱线图之如何添加最大值最小值线(whisker-ends)</h1>
         
 
         <div class="post-meta">
@@ -462,16 +337,14 @@
       
 
       
-        
-          <p><code>ggplot</code>作为R语言画图的瑞士军刀，相比于基础的R包，语法更加易于理解和掌握，不需要掌握很多的命令就能画出整洁美观的图表。比方说用<code>ggplot</code>来画箱线图，首先我们可以这样操作：</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/category/2018/04/02/2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p><code>ggplot</code>作为R语言画图的瑞士军刀，相比于基础的R包，语法更加易于理解和掌握，不需要掌握很多的命令就能画出整洁美观的图表。比方说用<code>ggplot</code>来画箱线图，首先我们可以这样操作：</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(ggplot2)</span><br><span class="line">library(RColorBrewer)</span><br><span class="line">p &lt;- ggplot(mpg, aes(class, hwy))</span><br><span class="line">p + geom_boxplot(aes(colour=class),width=0.5)+</span><br><span class="line">  theme(panel.background = element_blank(),axis.ticks=element_blank(),legend.position=&quot;none&quot;,axis.line = element_line(colour=&quot;black&quot;,arrow=arrow(length = unit(0.20, &quot;npc&quot;))))</span><br></pre></td></tr></table></figure>
+<p>得到下图<br><img src="http://upload-images.jianshu.io/upload_images/166439-901d0d1857bd5dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ggplot的箱线图"><br>但是在基础R包绘制的箱线图和大部分的箱线图中是这样的<br><img src="http://upload-images.jianshu.io/upload_images/166439-fa581c058200cfa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="基础R包的箱线图"><br>相比较于基础R包的箱线图，<code>ggplot</code>的箱线图缺少了最大值和最小值的两条须线（whisker-ends），于是我谷歌后找到了一个<a href="https://stackoverflow.com/questions/12993545/how-to-put-whisker-ends-on-ggplot2-boxplot" target="_blank" rel="noopener">网页</a>,参照网页中的操作，我在我的代码中加入了<code>stat_boxplot</code>,变成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">library(ggplot2)</span><br><span class="line">library(RColorBrewer)</span><br><span class="line">p &lt;- ggplot(mpg, aes(class, hwy))</span><br><span class="line">p + geom_boxplot(aes(colour=class),width=0.5)+</span><br><span class="line">  stat_boxplot(geom = &quot;errorbar&quot;,width=0.15,aes(color=class))+</span><br><span class="line">  theme(panel.background = element_blank(),axis.ticks=element_blank(),legend.position=&quot;none&quot;,axis.line = element_line(colour=&quot;black&quot;,arrow=arrow(length = unit(0.20, &quot;npc&quot;))))</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/166439-6994ae7c13f9c28e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="加上须线后的box图"><br>但是这样有一个问题，加上去的须线会挡住我们的box，显得图很乱，后来比照了前面的<a href="https://stackoverflow.com/questions/12993545/how-to-put-whisker-ends-on-ggplot2-boxplot" target="_blank" rel="noopener">网页</a>和我的代码，发现他的<code>stat_boxplot</code>在<code>geom_boxplot</code>前面，后来我想，之所以我的图会变成这样是因为<code>ggplot</code>是以图层的方式进行绘图，即后一个图层会覆盖前一个图层，因此我的代买里面先<code>geom_boxplot</code>后<code>stat_boxplot</code>导致前面的box被后面的线覆盖掉，如果不想出现这种情况，那就只需要将这两个命令调整一下顺序,修改代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">library(ggplot2)</span><br><span class="line">library(RColorBrewer)</span><br><span class="line">p &lt;- ggplot(mpg, aes(class, hwy))</span><br><span class="line">p + stat_boxplot(geom = &quot;errorbar&quot;,width=0.15,aes(color=class))+</span><br><span class="line">  geom_boxplot(aes(colour=class),width=0.5)+</span><br><span class="line">  theme(panel.background = element_blank(),axis.ticks=element_blank(),legend.position=&quot;none&quot;,axis.line = element_line(colour=&quot;black&quot;,arrow=arrow(length = unit(0.20, &quot;npc&quot;))))</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/166439-e9f8c9a060ab9a3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="最终修改完的"></p>
+<p>最终总结：记住<code>ggplot</code>是基于图层的绘图系统。</p>
+
       
     </div>
     
@@ -486,160 +359,44 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xieduo7.github.io/category/2018/04/02/2018-04-02-R安装.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Duo Xie">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/author.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Evo-Devo Bird">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/category/2018/04/02/2018-04-02-R安装.html" itemprop="url">Linux下安装R</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T23:12:30+08:00">
-                2018-04-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/生信-软件/" itemprop="url" rel="index">
-                    <span itemprop="name">生信/软件</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/技术/" rel="tag"># 技术</a>
           
-
+            <a href="/tags/R/" rel="tag"># R</a>
           
-            
+            <a href="/tags/画图/" rel="tag"># 画图</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>不像在windows上面下载安装包进行安装那么简单，你只要选择好安装目录，然后一直<code>next</code>就行。<br>要在<code>Linux</code>下通过源码安装R包是一件非常耗时耗力的事情。由于个人工作性质的原因，需要常常使用大型机进行作业，但是大型机基本都是<code>Linux</code>系统，由于需要使用<code>R</code>,并且经常会做一些个性化分析，需要自己安装相应的R包，但是由于自己没有root权限，在安装软件时难免会收到这样那样的掣肘。我第一次安装R以失败告终，因为安装R时会告诉你需要A库，然后你去安装A库，但是当你去安装A库的时候又会告诉你需要安装B库，如此循环往复，最后终于心撕力竭，手头又有其他事情要忙，终于铩羽而归。但是有一天遇到王道明，他正好也有过如此安装R的经历，最后捯饬了半天终于成功，最后还把这个经历总结下来，我当时内心狂喜，仿佛得到了武功秘籍。想着终于可以痛快地安装R了，但是事实证明我还是<code>Too young Too simple</code>,最后还是经历了之前没有预想到的大坑，凭借着王道明的安装指南和R官方文档，才终于功德圆满，取经归来。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/category/2018/04/02/2018-04-02-R安装.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/category/2018/04/02/2018-04-02-R安装.html" rel="next" title="Linux下安装R">
+                <i class="fa fa-chevron-left"></i> Linux下安装R
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/category/2018/04/03/hello-world.html" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -649,10 +406,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -660,6 +418,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -900,6 +662,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
