@@ -45,6 +45,32 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.google.com//css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -53,18 +79,20 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=5.1.4" color="#222">
 
 
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
 
 
 
@@ -73,6 +101,8 @@
 
 
 
+
+  <link rel="alternate" href="/atom.xml" title="Evo-Devo Bird" type="application/atom+xml" />
 
 
 
@@ -132,16 +162,15 @@
 
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-116928341-1', 'auto');
+  ga('send', 'pageview');
+</script>
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?812ae71cb2b7a53f051306b4c38ee577";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -201,6 +230,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -210,11 +249,55 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
 
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -308,6 +391,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/category/2018/04/02/2018-04-02-R安装.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="category/2018/04/02/2018-04-02-R安装.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -315,6 +409,27 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,929
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -335,15 +450,15 @@
         <p>不像在windows上面下载安装包进行安装那么简单，你只要选择好安装目录，然后一直<code>next</code>就行。<br>要在<code>Linux</code>下通过源码安装R包是一件非常耗时耗力的事情。由于个人工作性质的原因，需要常常使用大型机进行作业，但是大型机基本都是<code>Linux</code>系统，由于需要使用<code>R</code>,并且经常会做一些个性化分析，需要自己安装相应的R包，但是由于自己没有root权限，在安装软件时难免会收到这样那样的掣肘。我第一次安装R以失败告终，因为安装R时会告诉你需要A库，然后你去安装A库，但是当你去安装A库的时候又会告诉你需要安装B库，如此循环往复，最后终于心撕力竭，手头又有其他事情要忙，终于铩羽而归。但是有一天遇到王道明，他正好也有过如此安装R的经历，最后捯饬了半天终于成功，最后还把这个经历总结下来，我当时内心狂喜，仿佛得到了武功秘籍。想着终于可以痛快地安装R了，但是事实证明我还是<code>Too young Too simple</code>,最后还是经历了之前没有预想到的大坑，凭借着王道明的安装指南和R官方文档，才终于功德圆满，取经归来。</p>
 <a id="more"></a>
 <h1 id="第一难：R依赖库的安装"><a href="#第一难：R依赖库的安装" class="headerlink" title="第一难：R依赖库的安装"></a>第一难：R依赖库的安装</h1><p>在安装R之前首先要安装R依赖的包，如何知道R安装需要什么包呢？可以去看R的官方文档<a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Essential-and-useful-other-programs-under-a-Unix_002dalike" target="_blank" rel="noopener">R Installation and Administration </a>,我们主要要安装的依赖包是zlib，bzip，liblzma(这个包如果直接搜索liblzma出来的会是XZ，没错，需要安装的就是XZ)以及PCRE。不过首先需要注意的是，我安装的R版本是R-3.4.2 <code>Short Summer，2017-09-28发行</code>，而依照的官方文档也是Version 3.4.2 <code>2017-09-28</code>，因此其他版本的不一定完全适用，但是一般来说R所依赖的包大致都是这些，可能有版本的区别，安装R的大致顺序也差不多。其次，在安装这些库时最好遵照我下面给出的顺序来依次进行。否则就会报错。</p>
-<h2 id="1-安装zlib1-2-5版本及以上"><a href="#1-安装zlib1-2-5版本及以上" class="headerlink" title="1.安装zlib1.2.5版本及以上"></a>1.安装zlib<code>1.2.5版本及以上</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd zlib-1.2.11</span><br><span class="line">./configure --prefix =/bulider/software/zlib</span><br><span class="line">make  </span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h2 id="2-安装bzip"><a href="#2-安装bzip" class="headerlink" title="2.安装bzip"></a>2.安装bzip</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd bzip2-1.0.6</span><br><span class="line">make -f Makefile-libbz2_so</span><br><span class="line">修改Makefile 中的PREFIX=/bulider/software/bzip2</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<h2 id="3-安装liblzma5-0-3版本及以上"><a href="#3-安装liblzma5-0-3版本及以上" class="headerlink" title="3.安装liblzma5.0.3版本及以上"></a>3.安装liblzma<code>5.0.3版本及以上</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd xz-5.2.3</span><br><span class="line">./configure -prefix=/bulider/software/xz</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h2 id="4-安装pcre"><a href="#4-安装pcre" class="headerlink" title="4.安装pcre"></a>4.安装pcre</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf pcre-8.41.tar.gz</span><br><span class="line">cd pcre-8.41</span><br><span class="line">./configure --enable-utf --enable-unicode-properties --enable-jit --disable-cpp --prefix /bulider/software/pcre##这个包的安装参数是有要求的，因此用的是官方文档的推荐命令</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h2 id="5-安装libcurl7-22-0及以上，但是不要超过版本8"><a href="#5-安装libcurl7-22-0及以上，但是不要超过版本8" class="headerlink" title="5.安装libcurl7.22.0及以上，但是不要超过版本8"></a>5.安装libcurl<code>7.22.0及以上，但是不要超过版本8</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxf curl-7.28.0.tar.gz</span><br><span class="line">cd curl-7.28.0</span><br><span class="line">./configure --prefix=/bulider/software/curl</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h1 id="第二难：安装R"><a href="#第二难：安装R" class="headerlink" title="第二难：安装R"></a>第二难：安装R</h1><p>安装了一打R的依赖包以后，你以为就能修成正果，急流勇退了吗？如果你有这个想法我想说你还是<strong>图样图森破！上台拿衣服！</strong><br>1.进行<code>configure</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/source/R-3.4.2/configure --prefix=/builder/software/R --en</span><br><span class="line">able-R-shlib --with-cairo  --with-jpeglib --with-readline --with-tcltk  --with-blas --with-lapack --enable-R-profiling LDFLAGS=&quot;-L/builder/software/zlib/lib  -L/builder/software/bzip2/lib -L/builder/software/xz/lib -L/builder/software/pcre/lib -L/builder/so</span><br><span class="line">ftware/curl/lib&quot; CPPFLAGS=&quot;-I/builder/zlib/include -I/builder/softw</span><br><span class="line">are/bzip2/include -I/builder/software/xz/include -I/builder/software/pcre/in</span><br><span class="line">clude -I/builder/software/curl/include&quot;##第一步检查环境配置，生成Makefile</span><br></pre></td></tr></table></figure></p>
-<p>首先注意一点，如果你要把R安装到另一个文件夹里而不是源码所在的文件夹里，那么你首先要创建一个文件夹，然后在这个文件夹里对R进行编译，在<code>configure</code>时要加上全路径<code>/source/R-3.4.2/configure</code>，同时在后面加上<code>--prefix=</code>参数，比方我要安装到<code>/builder/software/R</code>,那么就需要加入<code>--prefix=/builder/software/R</code>这个参数，而我的源码在<code>/source/R-3.4.2</code>这个文件夹里。<br>其次由于R是用C语言写的，因此要从源码编译R需要把R的源码需要通过<code>gcc</code>将源码编译为可执行文件。在前面我们安装了一些R的依赖库，这些依赖库是在编译R的时候要用到的，如果在一般情况下这些依赖库都会放到系统指定的位置来进行使用，但是由于我没有root权限，因此无法将这些库文件放到系统指定的库路径或者修改相应的配置文件，只能把这些库的路径通过<code>LDFLAGS</code>和<code>CPPFLAGS</code>这两个参数来传递给<code>gcc</code>，关于这两个参数可以<a href="http://www.cnblogs.com/taskiller/archive/2012/12/14/2817650.html" target="_blank" rel="noopener">参考</a>。告诉<code>gcc</code>这些路径里有相应的库。其中<code>LDFLAGS</code>传递的是给链接器的参数，<code>CPPFLAGS</code>传递的是相应的头文件。这两个参数都是<code>configure</code>的参数。<br>2.通过上一步生成了<code>Makefile</code>后，觉得胜利已经在前方向你招手，于是你进行了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure></p>
-<p><strong>但是出现了报错！</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ld: warning: libpcre.so.1, needed by ../../lib/libR.so, not found (try using -rpath or -rpath-link)</span><br><span class="line">/usr/bin/ld: warning: liblzma.so.5, needed by ../../lib/libR.so, not found (try using -rpath or -rpath-link)</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_fullinfo&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_lzma_preset@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_alone_decoder@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_crc64@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_raw_encoder@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_config&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_code@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_stream_decoder@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_free&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_raw_decoder@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_free_study&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_assign_jit_stack&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_exec&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_version_string@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_maketables&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_stream_encoder@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_compile&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_study&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_version&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `lzma_end@XZ_5.0&apos;</span><br><span class="line">../../lib/libR.so: undefined reference to `pcre_jit_stack_alloc&apos;</span><br><span class="line">collect2: error: ld returned 1 exit status</span><br><span class="line">make[3]: *** [R.bin] Error 1</span><br><span class="line">make[3]: Leaving directory `/builder/software/R/src/main&apos;</span><br><span class="line">make[2]: *** [R] Error 2</span><br><span class="line">make[2]: Leaving directory `/builder/software/R/src/main&apos;</span><br><span class="line">make[1]: *** [R] Error 1</span><br><span class="line">make[1]: Leaving directory `/builder/software/R/src&apos;</span><br><span class="line">make: *** [R] Error 1</span><br></pre></td></tr></table></figure></p>
-<p>这个报错是因为什么原因导致的？我们可以看到里面说<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ld: warning: libpcre.so.1, needed by ../../lib/libR.so, not found (try using -rpath or -rpath-link)</span><br><span class="line">/usr/bin/ld: warning: liblzma.so.5, needed by ../../lib/libR.so, not found (try using -rpath or -rpath-link)</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-安装zlib1-2-5版本及以上"><a href="#1-安装zlib1-2-5版本及以上" class="headerlink" title="1.安装zlib1.2.5版本及以上"></a>1.安装zlib<code>1.2.5版本及以上</code></h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> zlib-1.2.11</span><br><span class="line"><span class="string">./configure</span> <span class="params">--prefix</span> =<span class="string">/bulider/software/zlib</span></span><br><span class="line">make  </span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h2 id="2-安装bzip"><a href="#2-安装bzip" class="headerlink" title="2.安装bzip"></a>2.安装bzip</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> bzip2-<span class="number">1.0</span>.<span class="number">6</span></span><br><span class="line"><span class="keyword">make</span> -<span class="keyword">f</span> Makefile-libbz2_so</span><br><span class="line">修改Makefile 中的PREFIX=/bulider/software/bzip2</span><br><span class="line"><span class="keyword">make</span> &amp;&amp; <span class="keyword">make</span> install</span><br></pre></td></tr></table></figure>
+<h2 id="3-安装liblzma5-0-3版本及以上"><a href="#3-安装liblzma5-0-3版本及以上" class="headerlink" title="3.安装liblzma5.0.3版本及以上"></a>3.安装liblzma<code>5.0.3版本及以上</code></h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> xz-5.2.3</span><br><span class="line"><span class="string">./configure</span> -prefix=<span class="string">/bulider/software/xz</span></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h2 id="4-安装pcre"><a href="#4-安装pcre" class="headerlink" title="4.安装pcre"></a>4.安装pcre</h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf pcre-8.41.tar.gz</span><br><span class="line"><span class="keyword">cd</span> pcre-8.41</span><br><span class="line"><span class="string">./configure</span> <span class="params">--enable-utf</span> <span class="params">--enable-unicode-properties</span> <span class="params">--enable-jit</span> <span class="params">--disable-cpp</span> <span class="params">--prefix</span> <span class="string">/bulider/software/pcre</span><span class="comment">##这个包的安装参数是有要求的，因此用的是官方文档的推荐命令</span></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h2 id="5-安装libcurl7-22-0及以上，但是不要超过版本8"><a href="#5-安装libcurl7-22-0及以上，但是不要超过版本8" class="headerlink" title="5.安装libcurl7.22.0及以上，但是不要超过版本8"></a>5.安装libcurl<code>7.22.0及以上，但是不要超过版本8</code></h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxf curl<span class="number">-7.28</span><span class="number">.0</span>.tar.gz</span><br><span class="line">cd curl<span class="number">-7.28</span><span class="number">.0</span></span><br><span class="line">./configure --prefix=/bulider/software/curl</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h1 id="第二难：安装R"><a href="#第二难：安装R" class="headerlink" title="第二难：安装R"></a>第二难：安装R</h1><p>安装了一打R的依赖包以后，你以为就能修成正果，急流勇退了吗？如果你有这个想法我想说你还是<strong>图样图森破！上台拿衣服！</strong><br>1.进行<code>configure</code><br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/<span class="string">source/</span><span class="string">R-3.</span>4.2/<span class="string">configure </span><span class="built_in">--prefix=/builder/software/R</span> <span class="built_in">--en</span></span><br><span class="line"><span class="built_in">able-R-shlib</span> <span class="built_in">--with-cairo</span>  <span class="built_in">--with-jpeglib</span> <span class="built_in">--with-readline</span> <span class="built_in">--with-tcltk</span>  <span class="built_in">--with-blas</span> <span class="built_in">--with-lapack</span> <span class="built_in">--enable-R-profiling</span> <span class="string">LDFLAGS=</span><span class="string">"-L/builder/software/zlib/lib  -L/builder/software/bzip2/lib -L/builder/software/xz/lib -L/builder/software/pcre/lib -L/builder/so</span></span><br><span class="line"><span class="string">ftware/curl/lib"</span> <span class="string">CPPFLAGS=</span><span class="string">"-I/builder/zlib/include -I/builder/softw</span></span><br><span class="line"><span class="string">are/bzip2/include -I/builder/software/xz/include -I/builder/software/pcre/in</span></span><br><span class="line"><span class="string">clude -I/builder/software/curl/include"</span><span class="comment">##第一步检查环境配置，生成Makefile</span></span><br></pre></td></tr></table></figure></p>
+<p>首先注意一点，如果你要把R安装到另一个文件夹里而不是源码所在的文件夹里，那么你首先要创建一个文件夹，然后在这个文件夹里对R进行编译，在<code>configure</code>时要加上全路径<code>/source/R-3.4.2/configure</code>，同时在后面加上<code>--prefix=</code>参数，比方我要安装到<code>/builder/software/R</code>,那么就需要加入<code>--prefix=/builder/software/R</code>这个参数，而我的源码在<code>/source/R-3.4.2</code>这个文件夹里。<br>其次由于R是用C语言写的，因此要从源码编译R需要把R的源码需要通过<code>gcc</code>将源码编译为可执行文件。在前面我们安装了一些R的依赖库，这些依赖库是在编译R的时候要用到的，如果在一般情况下这些依赖库都会放到系统指定的位置来进行使用，但是由于我没有root权限，因此无法将这些库文件放到系统指定的库路径或者修改相应的配置文件，只能把这些库的路径通过<code>LDFLAGS</code>和<code>CPPFLAGS</code>这两个参数来传递给<code>gcc</code>，关于这两个参数可以<a href="http://www.cnblogs.com/taskiller/archive/2012/12/14/2817650.html" target="_blank" rel="noopener">参考</a>。告诉<code>gcc</code>这些路径里有相应的库。其中<code>LDFLAGS</code>传递的是给链接器的参数，<code>CPPFLAGS</code>传递的是相应的头文件。这两个参数都是<code>configure</code>的参数。<br>2.通过上一步生成了<code>Makefile</code>后，觉得胜利已经在前方向你招手，于是你进行了<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">make</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>但是出现了报错！</strong><br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/<span class="symbol">ld:</span> <span class="symbol">warning:</span> libpcre.so.<span class="number">1</span>, needed by ../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>, <span class="title">not</span> <span class="title">found</span> (<span class="title">try</span> <span class="title">using</span> -<span class="title">rpath</span> <span class="title">or</span> -<span class="title">rpath</span>-<span class="title">link</span>)</span></span><br><span class="line">/usr/bin/<span class="symbol">ld:</span> <span class="symbol">warning:</span> liblzma.so.<span class="number">5</span>, needed by ../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>, <span class="title">not</span> <span class="title">found</span> (<span class="title">try</span> <span class="title">using</span> -<span class="title">rpath</span> <span class="title">or</span> -<span class="title">rpath</span>-<span class="title">link</span>)</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_fullinfo</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_lzma_preset</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_alone_decoder</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_crc64</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_raw_encoder</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_config</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_code</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_stream_decoder</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_free</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_raw_decoder</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_free_study</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_assign_jit_stack</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_exec</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_version_string</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_maketables</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_stream_encoder</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_compile</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_study</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_version</span>'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">lzma_end</span>@<span class="title">XZ_5</span>.0'</span></span><br><span class="line">../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>: <span class="title">undefined</span> <span class="title">reference</span> <span class="title">to</span> `<span class="title">pcre_jit_stack_alloc</span>'</span></span><br><span class="line"><span class="symbol">collect2:</span> <span class="symbol">error:</span> ld returned <span class="number">1</span> exit status</span><br><span class="line">make[<span class="number">3</span>]: *** [R.bin] Error <span class="number">1</span></span><br><span class="line">make[<span class="number">3</span>]: Leaving directory <span class="string">`/builder/software/R/src/main'</span></span><br><span class="line"><span class="string">make[2]: *** [R] Error 2</span></span><br><span class="line"><span class="string">make[2]: Leaving directory `</span>/builder/software/R/src/main<span class="string">'</span></span><br><span class="line"><span class="string">make[1]: *** [R] Error 1</span></span><br><span class="line"><span class="string">make[1]: Leaving directory `/builder/software/R/src'</span></span><br><span class="line"><span class="symbol">make:</span> *** [R] Error <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>这个报错是因为什么原因导致的？我们可以看到里面说<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/<span class="symbol">ld:</span> <span class="symbol">warning:</span> libpcre.so.<span class="number">1</span>, needed by ../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>, <span class="title">not</span> <span class="title">found</span> (<span class="title">try</span> <span class="title">using</span> -<span class="title">rpath</span> <span class="title">or</span> -<span class="title">rpath</span>-<span class="title">link</span>)</span></span><br><span class="line">/usr/bin/<span class="symbol">ld:</span> <span class="symbol">warning:</span> liblzma.so.<span class="number">5</span>, needed by ../../<span class="class"><span class="keyword">lib</span>/<span class="title">libR</span>.<span class="title">so</span>, <span class="title">not</span> <span class="title">found</span> (<span class="title">try</span> <span class="title">using</span> -<span class="title">rpath</span> <span class="title">or</span> -<span class="title">rpath</span>-<span class="title">link</span>)</span></span><br></pre></td></tr></table></figure></p>
 <p>说缺少<code>libpcre.so.1</code>和<code>liblzma.so.5</code>这两个库文件，<code>我心里浮现了一副黑人问号脸</code>我在前面<code>./configure</code>的时候还传入了<code>PCRE</code>和<code>XZ</code>这两个库的路径，<strong>为什么还是会报错？</strong><br>于是我先是进行了谷歌，从谷歌上找到了一篇<a href="http://kuxingseng2016.blog.51cto.com/1374617/1846326" target="_blank" rel="noopener">R安装攻略</a>,在这篇攻略里也提到了这个问题，</p>
 <blockquote>
 <p>此处报错是由于没有找到动态库，看第一二行<br>解决方法：添加动态库<br>cat /etc/ld.so.conf<br>include ld.so.conf.d/*.conf<br>/opt/pcre-8.39/lib<br>/opt/xz-5.2.2/lib</p>
@@ -352,14 +467,14 @@
 <blockquote>
 <p>gcc编译链接动态库时，很有可能编译通过，但是执行时，找不到动态链接库，那是因为-L选项指定的路径只在编译时有效，解决方法是通过-Wl(注意，是字母表K之后的小写L),rpath=&lt;your_lib_dir&gt;，使得execute记住链接库的位置</p>
 </blockquote>
-<p>于是我试着在<code>configure</code>的时候加入这两个参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/builder/software/R-3.4.2/configure --prefix=/builder/software/R --en</span><br><span class="line">able-R-shlib --with-cairo  --with-jpeglib --with-readline --with-tcltk  --with-blas --with-lapack --enable-R-profiling LDFLAGS=&quot;-L/builder/software/zlib/lib  -L/builder/software/bzip2/lib -L/builder/software/xz/lib  -Wl,--rpath/builder/software/pcre/lib -Wl,--rpath/builder/so</span><br><span class="line">ftware/curl/lib&quot; CPPFLAGS=&quot;-I/builder/software/zlib/include -I/builder/softw</span><br><span class="line">are/bzip2/include -I/builder/software/xz/include -I/builder/software/pcre/in</span><br><span class="line">clude -I/builder/software/curl/include</span><br></pre></td></tr></table></figure></p>
-<p>但是这样总会报错，后来我知道，<code>configure</code>的时候我们传入的参数都会写到<code>Makeconf</code>文件里面，那么我可不可以先按照原来的我方法先进行<code>configure</code>，然后再对<code>Makeconf</code>文件进行修改呢？于是我还是先按照之前的方法进行<code>configure</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/builder/software/R-3.4.2/configure --prefix=/builder/software/R --en</span><br><span class="line">able-R-shlib --with-cairo  --with-jpeglib --with-readline --with-tcltk  --with-blas --with-lapack --enable-R-profiling LDFLAGS=&quot;-L/builder/software/zlib/lib  -L/builder/software/bzip2/lib -L/builder/software/xz/lib -L/builder/software/pcre/lib -L/builder/so</span><br><span class="line">ftware/curl/lib&quot; CPPFLAGS=&quot;-I/builder/software/zlib/include -I/builder/softw</span><br><span class="line">are/bzip2/include -I/builder/software/xz/include -I/builder/software/pcre/in</span><br><span class="line">clude -I/builder/software/curl/include</span><br></pre></td></tr></table></figure></p>
-<p>然后在<code>make</code>之前修改<code>Makeconf</code>中的参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LDFLAGS = -L/builder/software/zlib/lib  -L/builder/software/bzip2/lib   -L/builder/software/curl/lib -Wl,-rpath=/builder/software/xz/lib -Wl,-rpath=/builder/software/pcre/lib</span><br></pre></td></tr></table></figure></p>
-<p>再进行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure></p>
-<p><strong>之前的报错终于不见了!</strong>但是出现了新的报错<code>心里有句mmp</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ld: cannot find -lpcre</span><br><span class="line">collect2: error: ld returned 1 exit status</span><br><span class="line">make[3]: *** [libR.so] Error 1</span><br><span class="line">make[3]: Leaving directory `/builder/software/R-3.4.2/src/main&apos;</span><br><span class="line">make[2]: *** [R] Error 2</span><br><span class="line">make[2]: Leaving directory `/builder/software/R-3.4.2/src/main&apos;</span><br><span class="line">make[1]: *** [R] Error 1</span><br><span class="line">make[1]: Leaving directory `/builder/software/R-3.4.2/src&apos;</span><br><span class="line">make: *** [R] Error 1</span><br></pre></td></tr></table></figure></p>
-<p>于是我在想，可能是前面我把<code>LDFLAGS</code>里面参数由<code>-L/builder/software/pcre/lib</code>修改为了<code>-Wl,-rpath=/builder/software/pcre/lib</code>之后不再出现原来的报错，但是现在又出现了新的报错，而我在使用原来的参数时不会出现这个新的报错，结合之前我搜索到的<a href="http://www.cnblogs.com/bourneli/archive/2012/04/27/2474103.html" target="_blank" rel="noopener">结果</a>,是不是因为我之前的写法只能让路径<code>gcc</code>在编译时有效,而后来的写法只能让其在进行运行时有效？那么如果我让两种参数同时出现，虽然我把库的路径传递了两次，但是会不会就不再报错了？<strong>时间是检验真理的唯一标准！先试验一把！</strong>于是我把两种参数的路径都加到了<code>Makeconf</code>中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LDFLAGS = -L/builder/software/zlib/lib  -L/builder/software/bzip2/lib -L/builder/software/xz/lib -L/builder/software/pcre/lib -L/builder/software/curl/lib -Wl,-rpath=/builder/software/xz/lib -Wl,-rpath=/builder/software/pcre/lib</span><br></pre></td></tr></table></figure></p>
-<p>再次进行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure></p>
-<p>终于没有了报错。说明<code>make</code>成功了，于是我再进行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure></p>
+<p>于是我试着在<code>configure</code>的时候加入这两个参数<br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/builder/software/R</span><span class="literal">-</span><span class="comment">3</span><span class="string">.</span><span class="comment">4</span><span class="string">.</span><span class="comment">2/configure</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">prefix=/builder/software/R</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">en</span></span><br><span class="line"><span class="comment">able</span><span class="literal">-</span><span class="comment">R</span><span class="literal">-</span><span class="comment">shlib</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">cairo</span>  <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">jpeglib</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">readline</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">tcltk</span>  <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">blas</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">lapack</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">enable</span><span class="literal">-</span><span class="comment">R</span><span class="literal">-</span><span class="comment">profiling</span> <span class="comment">LDFLAGS="</span><span class="literal">-</span><span class="comment">L/builder/software/zlib/lib</span>  <span class="literal">-</span><span class="comment">L/builder/software/bzip2/lib</span> <span class="literal">-</span><span class="comment">L/builder/software/xz/lib</span>  <span class="literal">-</span><span class="comment">Wl</span><span class="string">,</span><span class="literal">-</span><span class="literal">-</span><span class="comment">rpath/builder/software/pcre/lib</span> <span class="literal">-</span><span class="comment">Wl</span><span class="string">,</span><span class="literal">-</span><span class="literal">-</span><span class="comment">rpath/builder/so</span></span><br><span class="line"><span class="comment">ftware/curl/lib"</span> <span class="comment">CPPFLAGS="</span><span class="literal">-</span><span class="comment">I/builder/software/zlib/include</span> <span class="literal">-</span><span class="comment">I/builder/softw</span></span><br><span class="line"><span class="comment">are/bzip2/include</span> <span class="literal">-</span><span class="comment">I/builder/software/xz/include</span> <span class="literal">-</span><span class="comment">I/builder/software/pcre/in</span></span><br><span class="line"><span class="comment">clude</span> <span class="literal">-</span><span class="comment">I/builder/software/curl/include</span></span><br></pre></td></tr></table></figure></p>
+<p>但是这样总会报错，后来我知道，<code>configure</code>的时候我们传入的参数都会写到<code>Makeconf</code>文件里面，那么我可不可以先按照原来的我方法先进行<code>configure</code>，然后再对<code>Makeconf</code>文件进行修改呢？于是我还是先按照之前的方法进行<code>configure</code><br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/builder/software/R</span><span class="literal">-</span><span class="comment">3</span><span class="string">.</span><span class="comment">4</span><span class="string">.</span><span class="comment">2/configure</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">prefix=/builder/software/R</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">en</span></span><br><span class="line"><span class="comment">able</span><span class="literal">-</span><span class="comment">R</span><span class="literal">-</span><span class="comment">shlib</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">cairo</span>  <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">jpeglib</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">readline</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">tcltk</span>  <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">blas</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">lapack</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">enable</span><span class="literal">-</span><span class="comment">R</span><span class="literal">-</span><span class="comment">profiling</span> <span class="comment">LDFLAGS="</span><span class="literal">-</span><span class="comment">L/builder/software/zlib/lib</span>  <span class="literal">-</span><span class="comment">L/builder/software/bzip2/lib</span> <span class="literal">-</span><span class="comment">L/builder/software/xz/lib</span> <span class="literal">-</span><span class="comment">L/builder/software/pcre/lib</span> <span class="literal">-</span><span class="comment">L/builder/so</span></span><br><span class="line"><span class="comment">ftware/curl/lib"</span> <span class="comment">CPPFLAGS="</span><span class="literal">-</span><span class="comment">I/builder/software/zlib/include</span> <span class="literal">-</span><span class="comment">I/builder/softw</span></span><br><span class="line"><span class="comment">are/bzip2/include</span> <span class="literal">-</span><span class="comment">I/builder/software/xz/include</span> <span class="literal">-</span><span class="comment">I/builder/software/pcre/in</span></span><br><span class="line"><span class="comment">clude</span> <span class="literal">-</span><span class="comment">I/builder/software/curl/include</span></span><br></pre></td></tr></table></figure></p>
+<p>然后在<code>make</code>之前修改<code>Makeconf</code>中的参数<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LDFLAGS = -L<span class="regexp">/builder/</span>software<span class="regexp">/zlib/</span>lib  -L<span class="regexp">/builder/</span>software<span class="regexp">/bzip2/</span>lib   -L<span class="regexp">/builder/</span>software<span class="regexp">/curl/</span>lib -Wl,-rpath=<span class="regexp">/builder/</span>software<span class="regexp">/xz/</span>lib -Wl,-rpath=<span class="regexp">/builder/</span>software<span class="regexp">/pcre/</span>lib</span><br></pre></td></tr></table></figure></p>
+<p>再进行<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">make</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>之前的报错终于不见了!</strong>但是出现了新的报错<code>心里有句mmp</code>:<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ld: cannot <span class="builtin-name">find</span> -lpcre</span><br><span class="line">collect2: error: ld returned 1 exit status</span><br><span class="line">make[3]: *** [libR.so] <span class="builtin-name">Error</span> 1</span><br><span class="line">make[3]: Leaving directory `/builder/software/R-3.4.2/src/main'</span><br><span class="line">make[2]: *** [R] <span class="builtin-name">Error</span> 2</span><br><span class="line">make[2]: Leaving directory `/builder/software/R-3.4.2/src/main'</span><br><span class="line">make[1]: *** [R] <span class="builtin-name">Error</span> 1</span><br><span class="line">make[1]: Leaving directory `/builder/software/R-3.4.2/src'</span><br><span class="line">make: *** [R] <span class="builtin-name">Error</span> 1</span><br></pre></td></tr></table></figure></p>
+<p>于是我在想，可能是前面我把<code>LDFLAGS</code>里面参数由<code>-L/builder/software/pcre/lib</code>修改为了<code>-Wl,-rpath=/builder/software/pcre/lib</code>之后不再出现原来的报错，但是现在又出现了新的报错，而我在使用原来的参数时不会出现这个新的报错，结合之前我搜索到的<a href="http://www.cnblogs.com/bourneli/archive/2012/04/27/2474103.html" target="_blank" rel="noopener">结果</a>,是不是因为我之前的写法只能让路径<code>gcc</code>在编译时有效,而后来的写法只能让其在进行运行时有效？那么如果我让两种参数同时出现，虽然我把库的路径传递了两次，但是会不会就不再报错了？<strong>时间是检验真理的唯一标准！先试验一把！</strong>于是我把两种参数的路径都加到了<code>Makeconf</code>中<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LDFLAGS = -L<span class="regexp">/builder/</span>software<span class="regexp">/zlib/</span>lib  -L<span class="regexp">/builder/</span>software<span class="regexp">/bzip2/</span>lib -L<span class="regexp">/builder/</span>software<span class="regexp">/xz/</span>lib -L<span class="regexp">/builder/</span>software<span class="regexp">/pcre/</span>lib -L<span class="regexp">/builder/</span>software<span class="regexp">/curl/</span>lib -Wl,-rpath=<span class="regexp">/builder/</span>software<span class="regexp">/xz/</span>lib -Wl,-rpath=<span class="regexp">/builder/</span>software<span class="regexp">/pcre/</span>lib</span><br></pre></td></tr></table></figure></p>
+<p>再次进行<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">make</span></span><br></pre></td></tr></table></figure></p>
+<p>终于没有了报错。说明<code>make</code>成功了，于是我再进行<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make <span class="keyword">install</span></span><br></pre></td></tr></table></figure></p>
 <p>终于安装完成！<code>你挑着担我牵着马</code></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
 <li>在Linux下用源码安装R是个大坑<code>尤其是在没有root权限的情况下</code></li>
@@ -393,6 +508,18 @@
       
 
       
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
       
       
 
@@ -438,6 +565,16 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
 
 
 
@@ -474,9 +611,11 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+			 <a href="/" class="site-author-image" rel="start" style="border:none">
               <img class="site-author-image" itemprop="image"
                 src="/uploads/author.jpg"
                 alt="Duo Xie" />
+			 </a>
             
               <p class="site-author-name" itemprop="name">Duo Xie</p>
               <p class="site-description motion-element" itemprop="description">Talk is cheap,show me your result</p>
@@ -519,6 +658,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -588,7 +734,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-Earlybirds"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Duo Xie</span>
 
@@ -596,15 +742,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -722,8 +862,50 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://xieduo7.github.io/category/2018/04/02/2018-04-02-R安装.html';
+          this.page.identifier = 'category/2018/04/02/2018-04-02-R安装.html';
+          this.page.title = 'Linux下安装R';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
 
 
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 103391, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 103391, xid: "category/2018/04/02/2018-04-02-R安装.html"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/103391/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
 
 	
 
@@ -731,14 +913,6 @@
 
 
 
-  
-
-
-
-
-
-  
-
 
 
 
@@ -752,6 +926,323 @@
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -764,6 +1255,23 @@
 
   
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 10704,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
