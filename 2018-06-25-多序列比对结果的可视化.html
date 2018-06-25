@@ -103,7 +103,7 @@
 
 
 
-  <meta name="keywords" content="NCBI," />
+  <meta name="keywords" content="可视化," />
 
 
 
@@ -118,29 +118,22 @@
 
 
 
-<meta name="description" content="在做比较基因组学分析的时候，经常会遇到一种需求：我们想看某一个基因在不同物种中的分布情况及基因结构的区别。">
-<meta name="keywords" content="NCBI">
+<meta name="description" content="做比较基因组学中，进场会进行多序列比对结果的可视化。">
+<meta name="keywords" content="可视化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="批量从NCBI下载指定物种中指定基因的序列">
-<meta property="og:url" content="https://xieduo7.github.io/2018-05-25-批量从NCBI下载指定物种中指定基因的序列.html">
+<meta property="og:title" content="多序列比对可视化工具">
+<meta property="og:url" content="https://xieduo7.github.io/2018-06-25-多序列比对结果的可视化.html">
 <meta property="og:site_name" content="Evo-Devo Bird">
-<meta property="og:description" content="在做比较基因组学分析的时候，经常会遇到一种需求：我们想看某一个基因在不同物种中的分布情况及基因结构的区别。">
+<meta property="og:description" content="做比较基因组学中，进场会进行多序列比对结果的可视化。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/CYP2j19.png">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/69c0bf67-f81f-4032-8fec-4902f210ae97.png">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/250.png">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/all.png">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/mrna.png">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/entrz.png">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/shu.png">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/send.png">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/code.png">
-<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/cds.png">
-<meta property="og:updated_time" content="2018-06-25T09:12:04.954Z">
+<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/MEGA.png">
+<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/整体.png">
+<meta property="og:image" content="https://xieduo7.github.io/images/2018-06/碱基.png">
+<meta property="og:updated_time" content="2018-06-25T09:51:17.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="批量从NCBI下载指定物种中指定基因的序列">
-<meta name="twitter:description" content="在做比较基因组学分析的时候，经常会遇到一种需求：我们想看某一个基因在不同物种中的分布情况及基因结构的区别。">
-<meta name="twitter:image" content="https://xieduo7.github.io/images/2018-06/CYP2j19.png">
+<meta name="twitter:title" content="多序列比对可视化工具">
+<meta name="twitter:description" content="做比较基因组学中，进场会进行多序列比对结果的可视化。">
+<meta name="twitter:image" content="https://xieduo7.github.io/images/2018-06/MEGA.png">
 
 
 
@@ -170,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="https://xieduo7.github.io/2018-05-25-批量从NCBI下载指定物种中指定基因的序列.html"/>
+  <link rel="canonical" href="https://xieduo7.github.io/2018-06-25-多序列比对结果的可视化.html"/>
 
 
 
 
 
-  <title>批量从NCBI下载指定物种中指定基因的序列 | Evo-Devo Bird</title>
+  <title>多序列比对可视化工具 | Evo-Devo Bird</title>
   
 
 
@@ -328,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xieduo7.github.io/2018-05-25-批量从NCBI下载指定物种中指定基因的序列.html">
+    <link itemprop="mainEntityOfPage" href="https://xieduo7.github.io/2018-06-25-多序列比对结果的可视化.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Duo Xie">
@@ -345,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">批量从NCBI下载指定物种中指定基因的序列</h1>
+          <h1 class="post-title" itemprop="name headline">多序列比对可视化工具</h1>
         
 
         <div class="post-meta">
@@ -357,7 +350,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-25T17:02:30+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-25T17:48:30+08:00">
                 2018-06-25
               </time>
             
@@ -380,8 +373,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/生信-数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">生信/数据库</span>
+                  <a href="/categories/生信-比较基因组学/" itemprop="url" rel="index">
+                    <span itemprop="name">生信/比较基因组学</span>
                   </a>
                 </span>
 
@@ -399,8 +392,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018-05-25-批量从NCBI下载指定物种中指定基因的序列.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018-05-25-批量从NCBI下载指定物种中指定基因的序列.html" itemprop="commentsCount"></span>
+                <a href="/2018-06-25-多序列比对结果的可视化.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018-06-25-多序列比对结果的可视化.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -409,7 +402,7 @@
 
           
           
-             <span id="/2018-05-25-批量从NCBI下载指定物种中指定基因的序列.html" class="leancloud_visitors" data-flag-title="批量从NCBI下载指定物种中指定基因的序列">
+             <span id="/2018-06-25-多序列比对结果的可视化.html" class="leancloud_visitors" data-flag-title="多序列比对可视化工具">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -436,7 +429,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  760
+                  182
                 </span>
               
 
@@ -452,7 +445,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -473,8 +466,7 @@
       
 
       
-        <p>在做比较基因组学分析的时候，经常会遇到一种需求：我们想看某一个基因在不同物种中的分布情况及基因结构的区别。<br><a id="more"></a><br>在很多文献中比较常见的一种思路是：通过一个query序列在不同物种中进行blast搜索，获取基因组上大致的范围，然后用<code>Genewise</code>进行基因预测，如果是新测的物种，那么由于NCBI上没有这一物种的注释结果，我们只能这么做。但是如果我们要在已经发表的基因组中看某一个基因的情况的话，最好先在NCBI数据库中看下这个基因是否在这些基因组中已经注释出来。<br>因为无论我们自己的注释始终比不上NCBI的注释方法全面，因为NCBI的注释综合了NCBI中大量的数据，例如EST、cDNA等等，我们自己去注释的话没有这么多数据来源，所以对于<br>已经发表的基因组注释，我们的注释效果肯定比不上NCBI自己注释的效果。<br>比方说，如果我们要看<code>CYP2J19</code>这个基因在所有的已经发表的鸟类基因组中的分布情况，那么首先去NCBI上搜索这一基因：<br><img src="/images/2018-06/CYP2j19.png" alt="CYP2J19"><br>由于鸡是鸟类中比较有代表性的物种，我们以鸡当中的这个基因作为query，点击右侧的<code>Run Blast</code>,在<code>Entrez Query</code>中输入<code>biomol_mrna[properties] AND avian[organism]</code>,意思是只需要<code>mRNA</code>序列，物种范围为<code>鸟纲</code>,具体可<a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs&amp;DOC_TYPE=BlastHelp#entrez_query" target="_blank" rel="noopener">参考</a><br><img src="/images/2018-06/69c0bf67-f81f-4032-8fec-4902f210ae97.png" alt="CYP2J19_1"><br>在下方的参数设置中设置为最多250个结果，以得到尽量多的结果:<br><img src="/images/2018-06/250.png" alt="250"><br>点击<code>BLAST</code>,登上差不多1分钟，NCBI就有结果了。然后选择<code>All</code>:<br><img src="/images/2018-06/all.png" alt="all"><br>点击下载完整序列（这样我们会得到这些匹配上结果的完整序列，而不止是比对上的部分）：<br><img src="/images/2018-06/mrna.png" alt="mrna"><br>但是这样一来就有了第二个问题：NCBI上的基因序列分为<code>mRNA</code>和<code>cds</code>，两者的区别在与，<code>mRNA</code>序列前后经常会有<code>UTR</code>片段，而<code>cds</code>序列不包括UTR序列，因此cds才是蛋白序列所对应的核酸序列，也就是说<code>cds</code>经过翻译后可以成为蛋白序列。刚才的下载选项里只有完整序列即<code>mRNA</code>序列，我们现在如果只想获得cds序列的话，该怎么办？<br>我这里有一个曲线救国的方法：<br>先获得这些序列的编号，然后通过<code>Batch Entrez</code>批量获得cds序列。<br>获得序列编号(其中seqdump.txt是刚刚下载的mRNA序列文件)<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">grep</span> <span class="string">"&gt;"</span> seqdump.txt|awk <span class="string">'&#123;print <span class="variable">$1</span>&#125;'</span>|awk -F<span class="string">"&gt;"</span> <span class="string">'&#123;print <span class="variable">$2</span>&#125;'</span> &gt;download.list</span><br></pre></td></tr></table></figure></p>
-<p>然后打开<a href="https://www.ncbi.nlm.nih.gov/sites/batchentrez" target="_blank" rel="noopener">Batch Entrez</a>,<br><img src="/images/2018-06/entrz.png" alt="entrz"><br>数据库选择<code>Nucleotide</code>,然后选择文件上传，再点击右侧的<code>Retrieve</code>,出现如下界面:<br><img src="/images/2018-06/shu.png" alt="shu"><br>然后点击<code>Retrieve records for 87 UID(s)</code>,然后看到批量的结果：<br><img src="/images/2018-06/send.png" alt="send"><br>这时点击右上角的<code>Send to</code>,选择<code>Coding Sequences</code>,再点击<code>Creat File</code>,即可获得文件，<br><img src="/images/2018-06/code.png" alt="code"><br><img src="/images/2018-06/cds.png" alt="cds"></p>
+        <p>做比较基因组学中，进场会进行多序列比对结果的可视化。<br><a id="more"></a><br>以通过肉眼来对比对结果进行查看和评估，有很多软件都可以实现这个功能，例如<code>MEGA</code>,<code>Bioedit</code>以及<code>Genious</code>,<code>MEGA</code>和<code>Bioedit</code>只能从细节上去看比对结果<br><img src="/images/2018-06/MEGA.png" alt="MEGA"><br>难以从整体上对比对结果进行把握，<code>Genious</code>虽然可以在总体上看但是<code>Genious</code>是收费软件，且费用很高，但是我后来还找到了另一个工具：NCBI<a href="https://www.ncbi.nlm.nih.gov/projects/msaviewer/" target="_blank" rel="noopener">可视化工具</a>,虽然是在线工具，但是可以实现<code>Genious</code>的功能，上方可以看比对分值的分布，下方可以看比对效果的分布，<br><img src="/images/2018-06/整体.png" alt="整体"><br>放大后可显示碱基：<br><img src="/images/2018-06/碱基.png" alt="碱基"></p>
 
       
     </div>
@@ -501,7 +493,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/NCBI/" rel="tag"># NCBI</a>
+            <a href="/tags/可视化/" rel="tag"># 可视化</a>
           
         </div>
       
@@ -514,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-06-18-极度狂热：启程.html" rel="next" title="极度狂热：启程">
-                <i class="fa fa-chevron-left"></i> 极度狂热：启程
+              <a href="/2018-06-25-批量从NCBI下载指定物种中指定基因的序列.html" rel="next" title="批量从NCBI下载指定物种中指定基因的序列">
+                <i class="fa fa-chevron-left"></i> 批量从NCBI下载指定物种中指定基因的序列
               </a>
             
           </div>
@@ -601,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -612,7 +604,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -623,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -850,7 +842,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 103391, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 103391, xid: "2018-05-25-批量从NCBI下载指定物种中指定基因的序列.html"});
+		_hcwp.push({widget:"Stream", widget_id: 103391, xid: "2018-06-25-多序列比对结果的可视化.html"});
 		
 
 		(function() {
