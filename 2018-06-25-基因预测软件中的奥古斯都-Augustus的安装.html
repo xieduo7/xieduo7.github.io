@@ -127,7 +127,7 @@
 <meta property="og:description" content="Augustus是用作de novo基因注释(即从头预测)的软件，而这个软件的名字也起得很好：Augustus翻译成中文名字就是奥古斯都,即罗马帝国的开国君主。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-06/奥古斯都.jpg">
-<meta property="og:updated_time" content="2018-06-28T15:24:05.274Z">
+<meta property="og:updated_time" content="2018-06-28T15:29:03.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基因预测软件中的奥古斯都-Augustus的安装">
 <meta name="twitter:description" content="Augustus是用作de novo基因注释(即从头预测)的软件，而这个软件的名字也起得很好：Augustus翻译成中文名字就是奥古斯都,即罗马帝国的开国君主。">
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,082
+                  1,080
                 </span>
               
 
@@ -465,7 +465,7 @@
 
       
         <p><img src="/images/2018-06/奥古斯都.jpg" alt="奥古斯都"><br><code>Augustus</code>是用作<em>de novo</em>基因注释(即从头预测)的软件，而这个软件的名字也起得很好：<code>Augustus</code>翻译成中文名字就是<strong>奥古斯都</strong>,即罗马帝国的开国君主。<br><a id="more"></a><br>而开国君主这层含义与从头预测不谋而合，这样一来，这个名字既指出了这个软件的功能，又有一定的历史底蕴。虽然这是一个从头预测基因的软件，但是现在很多基因注释相关的软件都会依赖于这个软件，例如<a href="https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit" target="_blank" rel="noopener">CAT</a>以及<a href="https://busco.ezlab.org/" target="_blank" rel="noopener">BUSCO</a>，因此这个软件的作用并不是只有从头预测基因这么狭隘。虽然这个软件的<a href="http://bioinf.uni-greifswald.de/augustus/" target="_blank" rel="noopener">官网</a>上有<a href="http://bioinf.uni-greifswald.de/augustus/binaries/tutorial2018/" target="_blank" rel="noopener">安装教程</a>，也指出了需要的依赖包，但是在安装过程中还是有非常多的trick，因此安装这个软件是非常浩大的工程，这个软件的安装过程比<code>UCSC</code>软件包的安装还要繁琐。</p>
-<h1 id="一、安装需要安装的包-顺序有先后"><a href="#一、安装需要安装的包-顺序有先后" class="headerlink" title="一、安装需要安装的包(顺序有先后)"></a>一、安装需要安装的包(顺序有先后)</h1><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">libboost</span></span><br><span class="line"><span class="symbol">libgsl</span></span><br><span class="line"><span class="symbol">libsqlite3</span></span><br><span class="line"><span class="symbol">libsuitesparse</span></span><br><span class="line"><span class="symbol">lp</span>-solve</span><br><span class="line"><span class="keyword">bamtools</span></span><br><span class="line"><span class="keyword">htslib</span></span><br><span class="line"><span class="keyword">bcftools</span></span><br><span class="line"><span class="keyword">samtools</span></span><br></pre></td></tr></table></figure>
+<h1 id="安装需要安装的包-顺序有先后"><a href="#安装需要安装的包-顺序有先后" class="headerlink" title="安装需要安装的包(顺序有先后)"></a>安装需要安装的包(顺序有先后)</h1><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">libboost</span></span><br><span class="line"><span class="symbol">libgsl</span></span><br><span class="line"><span class="symbol">libsqlite3</span></span><br><span class="line"><span class="symbol">libsuitesparse</span></span><br><span class="line"><span class="symbol">lp</span>-solve</span><br><span class="line"><span class="keyword">bamtools</span></span><br><span class="line"><span class="keyword">htslib</span></span><br><span class="line"><span class="keyword">bcftools</span></span><br><span class="line"><span class="keyword">samtools</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>libboost，<a href="https://blog.csdn.net/this_capslock/article/details/47170313" target="_blank" rel="noopener">参考1</a>和<a href="https://www.boost.org/doc/libs/1_67_0/more/getting_started/unix-variants.html#get-boost" target="_blank" rel="noopener">参考2</a><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./bootstrap.sh <span class="attribute">--with-libraries</span>=all <span class="attribute">--with-toolset</span>=gcc <span class="attribute">--prefix</span>=/xieduo/lib/boost-1.67.0</span><br><span class="line">./b2 <span class="attribute">toolset</span>=gcc</span><br><span class="line">./b2 install <span class="attribute">--prefix</span>=/xieduo/lib/boost-1.67.0</span><br></pre></td></tr></table></figure>
 </li>
@@ -502,7 +502,7 @@
 </ol>
 <p>修改<code>misc/maq2sam.c</code>中33行中<code>#include &quot;version.h&quot;</code>为<code>#include &quot;../version.h&quot;</code>,修改<code>misc/wgsim.c</code>的42行的<code>#include &quot;version.h&quot;</code>为<code>#include &quot;../version.h&quot;</code>。<br>然后<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span></span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure></p>
 <p>如果不修改就会报错：<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gcc -g -O2 -DMAQ_LONGREADS -I. -I../htslib<span class="number">-1.8</span> -I./lz4 isc/maq2sam-<span class="built_in">long</span>.o misc/maq2sam.c</span><br><span class="line">misc/maq2sam.c: <span class="keyword">In</span> <span class="keyword">function</span> ‘main’:</span><br><span class="line">misc/maq2sam.c:<span class="number">215</span>:<span class="number">42</span>: <span class="keyword">error</span>: ‘SAMTOOLS_VERSION’ undeclared (first use <span class="keyword">in</span> this <span class="keyword">function</span>)</span><br><span class="line">         fprintf(stderr, <span class="string">"Version: %s\n"</span>, SAMTOOLS_VERSION);</span><br><span class="line">                                          ^</span><br><span class="line">misc/maq2sam.c:<span class="number">215</span>:<span class="number">42</span>: note: <span class="keyword">each</span> undeclared identifier <span class="keyword">is</span> reported only once <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">function</span> it appears <span class="keyword">in</span></span><br><span class="line">make: *** [misc/maq2sam-<span class="built_in">long</span>.o] <span class="keyword">Error</span> <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="二、-正式安装Augustus"><a href="#二、-正式安装Augustus" class="headerlink" title="二、 正式安装Augustus"></a>二、 正式安装<code>Augustus</code></h1><ol>
+<h1 id="正式安装Augustus"><a href="#正式安装Augustus" class="headerlink" title="正式安装Augustus"></a>正式安装<code>Augustus</code></h1><ol>
 <li><p>bam2hints<br>修改<code>/xieduo/src/augustus-3.3.1/auxprogs/bam2hints/Makefile</code>中第11行为</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INCLUDES</span> = <span class="regexp">/xieduo/</span>software<span class="regexp">/bamtools-2.4.0/i</span>nclude<span class="regexp">/bamtools</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -752,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、安装需要安装的包-顺序有先后"><span class="nav-number">1.</span> <span class="nav-text">一、安装需要安装的包(顺序有先后)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、-正式安装Augustus"><span class="nav-number">2.</span> <span class="nav-text">二、 正式安装Augustus</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装需要安装的包-顺序有先后"><span class="nav-number">1.</span> <span class="nav-text">安装需要安装的包(顺序有先后)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正式安装Augustus"><span class="nav-number">2.</span> <span class="nav-text">正式安装Augustus</span></a></li></ol></div>
             
 
           </div>
