@@ -130,7 +130,7 @@
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-07/busco_figure_vertebrata_odb9.png">
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-07/busco_figure_aves_odb9.png">
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-07/busco_figure.png">
-<meta property="og:updated_time" content="2018-07-15T12:54:22.086Z">
+<meta property="og:updated_time" content="2018-07-15T12:56:14.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用BUSCO来评估基因组完整性">
 <meta name="twitter:description" content="Benchmarking Universal Single-Copy Orthologs">
@@ -216,7 +216,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Hello Friend!</p>
+        <p class="site-subtitle">Sense and Sensibility</p>
       
   </div>
 
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,315
+                  1,327
                 </span>
               
 
@@ -485,9 +485,9 @@
 </blockquote>
 <p>不同指标的含义：<br>Complete：完整性，在被评估的基因组中BUSCO基因的预测分数以及比对上的长度打到了要求<br>Complete and single-copy：完整且在该基因组中只有一个拷贝的数目，该指标越高说明组装效果越好<br>Complete and duplicated：完整且在该基因组中有多个拷贝的数目，由于BUSCO基因集中的基因都是单拷贝的基因，因此如果出现了多个拷贝，就说明在单体型组装过程中出现了错误，因此该指标越高说明组装效果越差<br>Fragmented：Fragmented的基因虽然达到了预测分数，但是长度并没达到要求。有可能基因组组装过程中没有将该片段组装出来，也有可能是基因预测的时候由于基因结构的特殊性没能完整地将该基因预测出来。该指标越低越好。<br>Missing：Fragmented的基因在基因组中完全没有找到，或者预测分数低于要求。有可能基因组组装过程中没有将该片段组装出来，也有可能是基因预测的时候由于基因结构的特殊性没能完整地将该基因预测出来。该指标越低越好。<br>因此从真核生物BUSCO数据库的评价结果来说，Gal6综合情况最好，gal5和gal4之间则难分伯仲。<br><img src="/images/2018-07/busco_figure_eukaryota_odb9.png" alt="busco_figure_eukaryota_odb9"><br>脊椎动物BUSCO数据库:<br><img src="/images/2018-07/busco_figure_vertebrata_odb9.png" alt="busco_figure_vertebrata_odb9"><br>从真核生物BUSCO数据库的评价结果来说，Gal6综合情况最好，gal5次之，gal4最好。<br>鸟类BUSCO数据库：<br><img src="/images/2018-07/busco_figure_aves_odb9.png" alt="busco_figure_aves_odb9"><br>从真核生物BUSCO数据库的评价结果来说，Gal6综合情况最好，gal4次之，gal5最好。<br>但是根据<code>BUSCO</code>提供的<a href="https://gitlab.com/ezlab/busco/raw/master/BUSCO_v3_userguide.pdf" target="_blank" rel="noopener">使用说明</a>来看，在评估基因组时应该选取最specific的数据库来进行评价，比如我们在评估鸟类基因组时，就应该以鸟类的数据库为标准而非以脊椎动物的数据库为标准。<br>综上，Gal6综合情况最好，gal4次之，gal5最次。</p>
 <hr>
-<p><code>BUSCO</code>的流程中有一个绘图脚本可以对BUSCO的结果进行画图，但是其输出结果的画风是这样的：<br><img src="/images/2018-07/busco_figure.png" alt="busco_figure"><br>但是根据我之前看的<a href="https://book.douban.com/subject/27108685/" target="_blank" rel="noopener">《用数据讲故事》</a>这本书中所提供的绘图原则(<code>推荐下这本书，这本书里面所讲的绘图原则很实用，可以让你知道数据可视化展示时的基本原则</code>)，该图有三个地方需要改进：：<br>1.堆积条形图不利于体现差别，因此用簇庄条形图更好<br>2.Y轴的坐标轴其实没有也能看清<br>3.X轴在最上面更符合阅读顺序。<br>因此我修改了<code>BUSCO</code>自带的绘图脚本，地址：<a href="https://github.com/xieduo7/my_script/blob/master/busco_plot/generate_plot_xd_v2.py" target="_blank" rel="noopener">https://github.com/xieduo7/my_script/blob/master/busco_plot/generate_plot_xd_v2.py</a></p>
+<p><code>BUSCO</code>的流程中有一个绘图脚本可以对BUSCO的结果进行画图，但是其输出结果的画风是这样的：<br><img src="/images/2018-07/busco_figure.png" alt="busco_figure"><br>但是根据我之前看的<a href="https://book.douban.com/subject/27108685/" target="_blank" rel="noopener">《用数据讲故事》</a>这本书中所提供的绘图原则(<code>推荐下这本书，这本书里面所讲的绘图原则很实用，可以让你知道数据可视化展示时的基本原则,回头我也会总结下这本书的要点</code>)，该图有三个地方需要改进：：<br>1.堆积条形图不利于体现差别，因此用簇庄条形图更好<br>2.Y轴的坐标轴其实没有也能看清<br>3.X轴在最上面更符合阅读顺序。<br>因此我修改了<code>BUSCO</code>自带的绘图脚本，地址：<a href="https://github.com/xieduo7/my_script/blob/master/busco_plot/generate_plot_xd_v2.py" target="_blank" rel="noopener">https://github.com/xieduo7/my_script/blob/master/busco_plot/generate_plot_xd_v2.py</a></p>
 <hr>
-<p>参考文献<br>参考<br>Simão, F. A., et al. (2015). “BUSCO: assessing genome assembly and annotation completeness with single-copy orthologs.” Bioinformatics 31(19): 3210-3212.<br>Waterhouse, R. M., et al. (2018). “BUSCO Applications from Quality Assessments to Gene Prediction and Phylogenomics.” Molecular Biology and Evolution 35(3): 543-548.<br>Korlach, J., et al. (2017). “De novo PacBio long-read and phased avian genome assemblies correct and add to reference genes generated with intermediate and short reads.” GigaScience 6(10): 1-16.</p>
+<p>参考文献<br>Simão, F. A., et al. (2015). “BUSCO: assessing genome assembly and annotation completeness with single-copy orthologs.” Bioinformatics 31(19): 3210-3212.<br>Waterhouse, R. M., et al. (2018). “BUSCO Applications from Quality Assessments to Gene Prediction and Phylogenomics.” Molecular Biology and Evolution 35(3): 543-548.<br>Korlach, J., et al. (2017). “De novo PacBio long-read and phased avian genome assemblies correct and add to reference genes generated with intermediate and short reads.” GigaScience 6(10): 1-16.</p>
 
       
     </div>
