@@ -103,10 +103,12 @@
 
 
 
-  <meta name="keywords" content="技术,R,画图," />
+  <meta name="keywords" content="绘图," />
 
 
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="Evo-Devo Bird" type="application/atom+xml" />
@@ -116,23 +118,22 @@
 
 
 
-<meta name="description" content="ggplot作为R语言画图的瑞士军刀，相比于基础的R包，语法更加易于理解和掌握，不需要掌握很多的命令就能画出整洁美观的图表。比方说用ggplot来画箱线图，首先我们可以这样操作：">
-<meta name="keywords" content="技术,R,画图">
+<meta name="description" content="热图算是各种途中有点复杂的一类图，但是其实画起来并不难。本文中的代码参考了《R数据可视化手册》的13.6，并在此基础上加以改进。">
+<meta name="keywords" content="绘图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ggplot箱线图之如何添加最大值最小值线(whisker-ends)">
-<meta property="og:url" content="https://xieduo7.github.io/2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html">
+<meta property="og:title" content="用ggplot2绘制热图">
+<meta property="og:url" content="https://xieduo7.github.io/2018-07-26-用ggplot2绘制热图.html">
 <meta property="og:site_name" content="Evo-Devo Bird">
-<meta property="og:description" content="ggplot作为R语言画图的瑞士军刀，相比于基础的R包，语法更加易于理解和掌握，不需要掌握很多的命令就能画出整洁美观的图表。比方说用ggplot来画箱线图，首先我们可以这样操作：">
+<meta property="og:description" content="热图算是各种途中有点复杂的一类图，但是其实画起来并不难。本文中的代码参考了《R数据可视化手册》的13.6，并在此基础上加以改进。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/166439-901d0d1857bd5dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/166439-fa581c058200cfa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/166439-6994ae7c13f9c28e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/166439-e9f8c9a060ab9a3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-04-02T15:56:32.141Z">
+<meta property="og:image" content="https://xieduo7.github.io/images/2018-07/Rplot01.png">
+<meta property="og:image" content="https://xieduo7.github.io/images/2018-07/9c3550fd-10d3-4110-b730-a5f74d3ade1e.png">
+<meta property="og:image" content="https://xieduo7.github.io/images/2018-07/Rplot02.png">
+<meta property="og:updated_time" content="2018-07-26T04:12:46.280Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ggplot箱线图之如何添加最大值最小值线(whisker-ends)">
-<meta name="twitter:description" content="ggplot作为R语言画图的瑞士军刀，相比于基础的R包，语法更加易于理解和掌握，不需要掌握很多的命令就能画出整洁美观的图表。比方说用ggplot来画箱线图，首先我们可以这样操作：">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/166439-901d0d1857bd5dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="用ggplot2绘制热图">
+<meta name="twitter:description" content="热图算是各种途中有点复杂的一类图，但是其实画起来并不难。本文中的代码参考了《R数据可视化手册》的13.6，并在此基础上加以改进。">
+<meta name="twitter:image" content="https://xieduo7.github.io/images/2018-07/Rplot01.png">
 
 
 
@@ -162,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="https://xieduo7.github.io/2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html"/>
+  <link rel="canonical" href="https://xieduo7.github.io/2018-07-26-用ggplot2绘制热图.html"/>
 
 
 
 
 
-  <title>ggplot箱线图之如何添加最大值最小值线(whisker-ends) | Evo-Devo Bird</title>
+  <title>用ggplot2绘制热图 | Evo-Devo Bird</title>
   
 
 
@@ -320,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xieduo7.github.io/2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html">
+    <link itemprop="mainEntityOfPage" href="https://xieduo7.github.io/2018-07-26-用ggplot2绘制热图.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Duo Xie">
@@ -337,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ggplot箱线图之如何添加最大值最小值线(whisker-ends)</h1>
+          <h1 class="post-title" itemprop="name headline">用ggplot2绘制热图</h1>
         
 
         <div class="post-meta">
@@ -349,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T23:55:30+08:00">
-                2018-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T12:07:30+08:00">
+                2018-07-26
               </time>
             
 
@@ -372,8 +373,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/生信-软件/" itemprop="url" rel="index">
-                    <span itemprop="name">生信/软件</span>
+                  <a href="/categories/生信-R/" itemprop="url" rel="index">
+                    <span itemprop="name">生信/R</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生信-R/绘图/" itemprop="url" rel="index">
+                    <span itemprop="name">绘图</span>
                   </a>
                 </span>
 
@@ -391,8 +403,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html" itemprop="commentsCount"></span>
+                <a href="/2018-07-26-用ggplot2绘制热图.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018-07-26-用ggplot2绘制热图.html" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -401,7 +413,7 @@
 
           
           
-             <span id="/2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html" class="leancloud_visitors" data-flag-title="ggplot箱线图之如何添加最大值最小值线(whisker-ends)">
+             <span id="/2018-07-26-用ggplot2绘制热图.html" class="leancloud_visitors" data-flag-title="用ggplot2绘制热图">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -428,7 +440,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  493
+                  1,099
                 </span>
               
 
@@ -444,7 +456,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  6
                 </span>
               
             </div>
@@ -465,13 +477,14 @@
       
 
       
-        <p><code>ggplot</code>作为R语言画图的瑞士军刀，相比于基础的R包，语法更加易于理解和掌握，不需要掌握很多的命令就能画出整洁美观的图表。比方说用<code>ggplot</code>来画箱线图，首先我们可以这样操作：</p>
+        <p>热图算是各种途中有点复杂的一类图，但是其实画起来并不难。本文中的代码参考了《R数据可视化手册》的13.6，并在此基础上加以改进。</p>
 <a id="more"></a>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(<span class="name">ggplot2</span>)</span><br><span class="line">library(<span class="name">RColorBrewer</span>)</span><br><span class="line">p &lt;- ggplot(<span class="name">mpg</span>, aes(<span class="name">class</span>, hwy))</span><br><span class="line">p + geom_boxplot(<span class="name">aes</span>(<span class="name">colour=class</span>),width=0.<span class="number">5</span>)+</span><br><span class="line">  theme(<span class="name">panel</span>.background = element_blank(),axis.ticks=element_blank(),legend.position=<span class="string">"none"</span>,axis.line = element_line(<span class="name">colour=</span><span class="string">"black"</span>,arrow=arrow(<span class="name">length</span> = unit(<span class="number">0.20</span>, <span class="string">"npc"</span>))))</span><br></pre></td></tr></table></figure>
-<p>得到下图<br><img src="http://upload-images.jianshu.io/upload_images/166439-901d0d1857bd5dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ggplot的箱线图"><br>但是在基础R包绘制的箱线图和大部分的箱线图中是这样的<br><img src="http://upload-images.jianshu.io/upload_images/166439-fa581c058200cfa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="基础R包的箱线图"><br>相比较于基础R包的箱线图，<code>ggplot</code>的箱线图缺少了最大值和最小值的两条须线（whisker-ends），于是我谷歌后找到了一个<a href="https://stackoverflow.com/questions/12993545/how-to-put-whisker-ends-on-ggplot2-boxplot" target="_blank" rel="noopener">网页</a>,参照网页中的操作，我在我的代码中加入了<code>stat_boxplot</code>,变成<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">library(<span class="name">ggplot2</span>)</span><br><span class="line">library(<span class="name">RColorBrewer</span>)</span><br><span class="line">p &lt;- ggplot(<span class="name">mpg</span>, aes(<span class="name">class</span>, hwy))</span><br><span class="line">p + geom_boxplot(<span class="name">aes</span>(<span class="name">colour=class</span>),width=0.<span class="number">5</span>)+</span><br><span class="line">  stat_boxplot(<span class="name">geom</span> = <span class="string">"errorbar"</span>,width=0.<span class="number">15</span>,aes(<span class="name">color=class</span>))+</span><br><span class="line">  theme(<span class="name">panel</span>.background = element_blank(),axis.ticks=element_blank(),legend.position=<span class="string">"none"</span>,axis.line = element_line(<span class="name">colour=</span><span class="string">"black"</span>,arrow=arrow(<span class="name">length</span> = unit(<span class="number">0.20</span>, <span class="string">"npc"</span>))))</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/166439-6994ae7c13f9c28e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="加上须线后的box图"><br>但是这样有一个问题，加上去的须线会挡住我们的box，显得图很乱，后来比照了前面的<a href="https://stackoverflow.com/questions/12993545/how-to-put-whisker-ends-on-ggplot2-boxplot" target="_blank" rel="noopener">网页</a>和我的代码，发现他的<code>stat_boxplot</code>在<code>geom_boxplot</code>前面，后来我想，之所以我的图会变成这样是因为<code>ggplot</code>是以图层的方式进行绘图，即后一个图层会覆盖前一个图层，因此我的代买里面先<code>geom_boxplot</code>后<code>stat_boxplot</code>导致前面的box被后面的线覆盖掉，如果不想出现这种情况，那就只需要将这两个命令调整一下顺序,修改代码如下：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">library(<span class="name">ggplot2</span>)</span><br><span class="line">library(<span class="name">RColorBrewer</span>)</span><br><span class="line">p &lt;- ggplot(<span class="name">mpg</span>, aes(<span class="name">class</span>, hwy))</span><br><span class="line">p + stat_boxplot(<span class="name">geom</span> = <span class="string">"errorbar"</span>,width=0.<span class="number">15</span>,aes(<span class="name">color=class</span>))+</span><br><span class="line">  geom_boxplot(<span class="name">aes</span>(<span class="name">colour=class</span>),width=0.<span class="number">5</span>)+</span><br><span class="line">  theme(<span class="name">panel</span>.background = element_blank(),axis.ticks=element_blank(),legend.position=<span class="string">"none"</span>,axis.line = element_line(<span class="name">colour=</span><span class="string">"black"</span>,arrow=arrow(<span class="name">length</span> = unit(<span class="number">0.20</span>, <span class="string">"npc"</span>))))</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/166439-e9f8c9a060ab9a3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="最终修改完的"></p>
-<p>最终总结：记住<code>ggplot</code>是基于图层的绘图系统。</p>
+<p>1.数据准备<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line">pres_rating &lt;- data.frame(</span><br><span class="line">  rating = as.numeric(presidents),</span><br><span class="line">  year = as.numeric(floor(time(presidents))),</span><br><span class="line">  quarter = as.numeric(cycle(presidents))</span><br><span class="line">)</span><br><span class="line">pres_rating</span><br><span class="line">rating year quarter</span><br><span class="line"><span class="number">1</span> NA <span class="number">1945</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">87</span> <span class="number">1945</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">82</span> <span class="number">1945</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">75</span> <span class="number">1945</span> <span class="number">4</span></span><br><span class="line"><span class="number">5</span> <span class="number">63</span> <span class="number">1946</span> <span class="number">1</span></span><br><span class="line"><span class="number">6</span> <span class="number">50</span> <span class="number">1946</span> <span class="number">2</span></span><br><span class="line"><span class="number">7</span> <span class="number">43</span> <span class="number">1946</span> <span class="number">3</span></span><br><span class="line"><span class="number">8</span> <span class="number">32</span> <span class="number">1946</span> <span class="number">4</span></span><br><span class="line"><span class="number">9</span> <span class="number">35</span> <span class="number">1947</span> <span class="number">1</span></span><br><span class="line"><span class="number">10</span> <span class="number">60</span> <span class="number">1947</span> <span class="number">2</span></span><br><span class="line"><span class="number">11</span> <span class="number">54</span> <span class="number">1947</span> <span class="number">3</span></span><br><span class="line"><span class="number">12</span> <span class="number">55</span> <span class="number">1947</span> <span class="number">4</span></span><br><span class="line"><span class="number">13</span> <span class="number">36</span> <span class="number">1948</span> <span class="number">1</span></span><br><span class="line"><span class="number">14</span> <span class="number">39</span> <span class="number">1948</span> <span class="number">2</span></span><br><span class="line"><span class="number">15</span> NA <span class="number">1948</span> <span class="number">3</span></span><br><span class="line"><span class="number">16</span> NA <span class="number">1948</span> <span class="number">4</span></span><br><span class="line"><span class="number">17</span> <span class="number">69</span> <span class="number">1949</span> <span class="number">1</span></span><br><span class="line"><span class="number">18</span> <span class="number">57</span> <span class="number">1949</span> <span class="number">2</span></span><br><span class="line"><span class="number">19</span> <span class="number">57</span> <span class="number">1949</span> <span class="number">3</span></span><br><span class="line"><span class="number">20</span> <span class="number">51</span> <span class="number">1949</span> <span class="number">4</span></span><br><span class="line"><span class="number">21</span> <span class="number">45</span> <span class="number">1950</span> <span class="number">1</span></span><br><span class="line"><span class="number">22</span> <span class="number">37</span> <span class="number">1950</span> <span class="number">2</span></span><br><span class="line"><span class="number">23</span> <span class="number">46</span> <span class="number">1950</span> <span class="number">3</span></span><br><span class="line"><span class="number">24</span> <span class="number">39</span> <span class="number">1950</span> <span class="number">4</span></span><br><span class="line"><span class="number">25</span> <span class="number">36</span> <span class="number">1951</span> <span class="number">1</span></span><br><span class="line"><span class="number">26</span> <span class="number">24</span> <span class="number">1951</span> <span class="number">2</span></span><br><span class="line"><span class="number">27</span> <span class="number">32</span> <span class="number">1951</span> <span class="number">3</span></span><br><span class="line"><span class="number">28</span> <span class="number">23</span> <span class="number">1951</span> <span class="number">4</span></span><br><span class="line"><span class="number">29</span> <span class="number">25</span> <span class="number">1952</span> <span class="number">1</span></span><br><span class="line"><span class="number">30</span> <span class="number">32</span> <span class="number">1952</span> <span class="number">2</span></span><br><span class="line"><span class="number">31</span> NA <span class="number">1952</span> <span class="number">3</span></span><br><span class="line"><span class="number">32</span> <span class="number">32</span> <span class="number">1952</span> <span class="number">4</span></span><br><span class="line"><span class="number">33</span> <span class="number">59</span> <span class="number">1953</span> <span class="number">1</span></span><br><span class="line"><span class="number">34</span> <span class="number">74</span> <span class="number">1953</span> <span class="number">2</span></span><br><span class="line"><span class="number">35</span> <span class="number">75</span> <span class="number">1953</span> <span class="number">3</span></span><br><span class="line"><span class="number">36</span> <span class="number">60</span> <span class="number">1953</span> <span class="number">4</span></span><br><span class="line"><span class="number">37</span> <span class="number">71</span> <span class="number">1954</span> <span class="number">1</span></span><br><span class="line"><span class="number">38</span> <span class="number">61</span> <span class="number">1954</span> <span class="number">2</span></span><br><span class="line"><span class="number">39</span> <span class="number">71</span> <span class="number">1954</span> <span class="number">3</span></span><br><span class="line"><span class="number">40</span> <span class="number">57</span> <span class="number">1954</span> <span class="number">4</span></span><br><span class="line"><span class="number">41</span> <span class="number">71</span> <span class="number">1955</span> <span class="number">1</span></span><br><span class="line"><span class="number">42</span> <span class="number">68</span> <span class="number">1955</span> <span class="number">2</span></span><br><span class="line"><span class="number">43</span> <span class="number">79</span> <span class="number">1955</span> <span class="number">3</span></span><br><span class="line"><span class="number">44</span> <span class="number">73</span> <span class="number">1955</span> <span class="number">4</span></span><br><span class="line"><span class="number">45</span> <span class="number">76</span> <span class="number">1956</span> <span class="number">1</span></span><br><span class="line"><span class="number">46</span> <span class="number">71</span> <span class="number">1956</span> <span class="number">2</span></span><br><span class="line"><span class="number">47</span> <span class="number">67</span> <span class="number">1956</span> <span class="number">3</span></span><br><span class="line"><span class="number">48</span> <span class="number">75</span> <span class="number">1956</span> <span class="number">4</span></span><br><span class="line"><span class="number">49</span> <span class="number">79</span> <span class="number">1957</span> <span class="number">1</span></span><br><span class="line"><span class="number">50</span> <span class="number">62</span> <span class="number">1957</span> <span class="number">2</span></span><br><span class="line"><span class="number">51</span> <span class="number">63</span> <span class="number">1957</span> <span class="number">3</span></span><br><span class="line"><span class="number">52</span> <span class="number">57</span> <span class="number">1957</span> <span class="number">4</span></span><br><span class="line"><span class="number">53</span> <span class="number">60</span> <span class="number">1958</span> <span class="number">1</span></span><br><span class="line"><span class="number">54</span> <span class="number">49</span> <span class="number">1958</span> <span class="number">2</span></span><br><span class="line"><span class="number">55</span> <span class="number">48</span> <span class="number">1958</span> <span class="number">3</span></span><br><span class="line"><span class="number">56</span> <span class="number">52</span> <span class="number">1958</span> <span class="number">4</span></span><br><span class="line"><span class="number">57</span> <span class="number">57</span> <span class="number">1959</span> <span class="number">1</span></span><br><span class="line"><span class="number">58</span> <span class="number">62</span> <span class="number">1959</span> <span class="number">2</span></span><br><span class="line"><span class="number">59</span> <span class="number">61</span> <span class="number">1959</span> <span class="number">3</span></span><br><span class="line"><span class="number">60</span> <span class="number">66</span> <span class="number">1959</span> <span class="number">4</span></span><br><span class="line"><span class="number">61</span> <span class="number">71</span> <span class="number">1960</span> <span class="number">1</span></span><br><span class="line"><span class="number">62</span> <span class="number">62</span> <span class="number">1960</span> <span class="number">2</span></span><br><span class="line"><span class="number">63</span> <span class="number">61</span> <span class="number">1960</span> <span class="number">3</span></span><br><span class="line"><span class="number">64</span> <span class="number">57</span> <span class="number">1960</span> <span class="number">4</span></span><br><span class="line"><span class="number">65</span> <span class="number">72</span> <span class="number">1961</span> <span class="number">1</span></span><br><span class="line"><span class="number">66</span> <span class="number">83</span> <span class="number">1961</span> <span class="number">2</span></span><br><span class="line"><span class="number">67</span> <span class="number">71</span> <span class="number">1961</span> <span class="number">3</span></span><br><span class="line"><span class="number">68</span> <span class="number">78</span> <span class="number">1961</span> <span class="number">4</span></span><br><span class="line"><span class="number">69</span> <span class="number">79</span> <span class="number">1962</span> <span class="number">1</span></span><br><span class="line"><span class="number">70</span> <span class="number">71</span> <span class="number">1962</span> <span class="number">2</span></span><br><span class="line"><span class="number">71</span> <span class="number">62</span> <span class="number">1962</span> <span class="number">3</span></span><br><span class="line"><span class="number">72</span> <span class="number">74</span> <span class="number">1962</span> <span class="number">4</span></span><br><span class="line"><span class="number">73</span> <span class="number">76</span> <span class="number">1963</span> <span class="number">1</span></span><br><span class="line"><span class="number">74</span> <span class="number">64</span> <span class="number">1963</span> <span class="number">2</span></span><br><span class="line"><span class="number">75</span> <span class="number">62</span> <span class="number">1963</span> <span class="number">3</span></span><br><span class="line"><span class="number">76</span> <span class="number">57</span> <span class="number">1963</span> <span class="number">4</span></span><br><span class="line"><span class="number">77</span> <span class="number">80</span> <span class="number">1964</span> <span class="number">1</span></span><br><span class="line"><span class="number">78</span> <span class="number">73</span> <span class="number">1964</span> <span class="number">2</span></span><br><span class="line"><span class="number">79</span> <span class="number">69</span> <span class="number">1964</span> <span class="number">3</span></span><br><span class="line"><span class="number">80</span> <span class="number">69</span> <span class="number">1964</span> <span class="number">4</span></span><br><span class="line"><span class="number">81</span> <span class="number">71</span> <span class="number">1965</span> <span class="number">1</span></span><br><span class="line"><span class="number">82</span> <span class="number">64</span> <span class="number">1965</span> <span class="number">2</span></span><br><span class="line"><span class="number">83</span> <span class="number">69</span> <span class="number">1965</span> <span class="number">3</span></span><br><span class="line"><span class="number">84</span> <span class="number">62</span> <span class="number">1965</span> <span class="number">4</span></span><br><span class="line"><span class="number">85</span> <span class="number">63</span> <span class="number">1966</span> <span class="number">1</span></span><br><span class="line"><span class="number">86</span> <span class="number">46</span> <span class="number">1966</span> <span class="number">2</span></span><br><span class="line"><span class="number">87</span> <span class="number">56</span> <span class="number">1966</span> <span class="number">3</span></span><br><span class="line"><span class="number">88</span> <span class="number">44</span> <span class="number">1966</span> <span class="number">4</span></span><br><span class="line"><span class="number">89</span> <span class="number">44</span> <span class="number">1967</span> <span class="number">1</span></span><br><span class="line"><span class="number">90</span> <span class="number">52</span> <span class="number">1967</span> <span class="number">2</span></span><br><span class="line"><span class="number">91</span> <span class="number">38</span> <span class="number">1967</span> <span class="number">3</span></span><br><span class="line"><span class="number">92</span> <span class="number">46</span> <span class="number">1967</span> <span class="number">4</span></span><br><span class="line"><span class="number">93</span> <span class="number">36</span> <span class="number">1968</span> <span class="number">1</span></span><br><span class="line"><span class="number">94</span> <span class="number">49</span> <span class="number">1968</span> <span class="number">2</span></span><br><span class="line"><span class="number">95</span> <span class="number">35</span> <span class="number">1968</span> <span class="number">3</span></span><br><span class="line"><span class="number">96</span> <span class="number">44</span> <span class="number">1968</span> <span class="number">4</span></span><br><span class="line"><span class="number">97</span> <span class="number">59</span> <span class="number">1969</span> <span class="number">1</span></span><br><span class="line"><span class="number">98</span> <span class="number">65</span> <span class="number">1969</span> <span class="number">2</span></span><br><span class="line"><span class="number">99</span> <span class="number">65</span> <span class="number">1969</span> <span class="number">3</span></span><br><span class="line"><span class="number">100</span> <span class="number">56</span> <span class="number">1969</span> <span class="number">4</span></span><br><span class="line"><span class="number">101</span> <span class="number">66</span> <span class="number">1970</span> <span class="number">1</span></span><br><span class="line"><span class="number">102</span> <span class="number">53</span> <span class="number">1970</span> <span class="number">2</span></span><br><span class="line"><span class="number">103</span> <span class="number">61</span> <span class="number">1970</span> <span class="number">3</span></span><br><span class="line"><span class="number">104</span> <span class="number">52</span> <span class="number">1970</span> <span class="number">4</span></span><br><span class="line"><span class="number">105</span> <span class="number">51</span> <span class="number">1971</span> <span class="number">1</span></span><br><span class="line"><span class="number">106</span> <span class="number">48</span> <span class="number">1971</span> <span class="number">2</span></span><br><span class="line"><span class="number">107</span> <span class="number">54</span> <span class="number">1971</span> <span class="number">3</span></span><br><span class="line"><span class="number">108</span> <span class="number">49</span> <span class="number">1971</span> <span class="number">4</span></span><br><span class="line"><span class="number">109</span> <span class="number">49</span> <span class="number">1972</span> <span class="number">1</span></span><br><span class="line"><span class="number">110</span> <span class="number">61</span> <span class="number">1972</span> <span class="number">2</span></span><br><span class="line"><span class="number">111</span> NA <span class="number">1972</span> <span class="number">3</span></span><br><span class="line"><span class="number">112</span> NA <span class="number">1972</span> <span class="number">4</span></span><br><span class="line"><span class="number">113</span> <span class="number">68</span> <span class="number">1973</span> <span class="number">1</span></span><br><span class="line"><span class="number">114</span> <span class="number">44</span> <span class="number">1973</span> <span class="number">2</span></span><br><span class="line"><span class="number">115</span> <span class="number">40</span> <span class="number">1973</span> <span class="number">3</span></span><br><span class="line"><span class="number">116</span> <span class="number">27</span> <span class="number">1973</span> <span class="number">4</span></span><br><span class="line"><span class="number">117</span> <span class="number">28</span> <span class="number">1974</span> <span class="number">1</span></span><br><span class="line"><span class="number">118</span> <span class="number">25</span> <span class="number">1974</span> <span class="number">2</span></span><br><span class="line"><span class="number">119</span> <span class="number">24</span> <span class="number">1974</span> <span class="number">3</span></span><br><span class="line"><span class="number">120</span> <span class="number">24</span> <span class="number">1974</span> <span class="number">4</span></span><br></pre></td></tr></table></figure></p>
+<p>2.画图<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">library(<span class="name">ggplot2</span>)</span><br><span class="line">p &lt;- ggplot(<span class="name">pres_rating</span>, aes(<span class="name">x=year</span>, y=quarter, fill=rating))+</span><br><span class="line">  theme(<span class="name">panel</span>.background = element_blank(),axis.line = element_line(<span class="name">colour=</span><span class="string">"black"</span>))+</span><br><span class="line">  theme(<span class="name">axis</span>.ticks.x = element_blank())+</span><br><span class="line">  theme(<span class="name">axis</span>.ticks.y = element_blank())+</span><br><span class="line">  theme(<span class="name">axis</span>.title.y=element_blank())+</span><br><span class="line">  theme(<span class="name">axis</span>.title.x=element_blank())+</span><br><span class="line">  theme(<span class="name">legend</span>.title=element_blank())</span><br><span class="line">p+ geom_raster()</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018-07/Rplot01.png" alt="heatmap"><br>其中<br>|代码|作用|<br>|-|-|<br>|theme(panel.background = element_blank(),axis.line = element_line(colour=”black”))|将ggplot的默认的灰色背景去掉，坐标轴线为黑色|<br>|theme(axis.ticks.x = element_blank())|去掉X轴的轴须|<br>|theme(axis.title.y=element_blank())|去掉y轴标题|<br>|theme(legend.title=element_blank())|去掉图例的标题|<br>|geom_raster()|绘制热图，也可用geom_tile()，但是geom_raster()效率更高 |</p>
+<p>3.修改热图的颜色<br>在<code>ggplot2</code>默认的热图颜色中，颜色由浅入深代表数字由高到低，这种颜色显示方式多少与我们的习惯相反。因此我们经常需要修改热图的颜色，例如我们想修改成<a href="https://www.nature.com/articles/s41559-018-0588-1" target="_blank" rel="noopener">这篇文献</a>里的这幅图<br><img src="/images/2018-07/9c3550fd-10d3-4110-b730-a5f74d3ade1e.png" alt="heatmap2"><br>的颜色。可以用<a href="http://www.jiniannet.com/page/allcolor" target="_blank" rel="noopener">取色器</a>获取这些颜色的<code>RGB</code>号，然后就可以添加到图里：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- ggplot(<span class="name">pres_rating</span>, aes(<span class="name">x=year</span>, y=quarter, fill=rating))+</span><br><span class="line">  theme(<span class="name">panel</span>.background = element_blank(),axis.line = element_line(<span class="name">colour=</span><span class="string">"black"</span>))+</span><br><span class="line">  theme(<span class="name">axis</span>.ticks.x = element_blank())+</span><br><span class="line">  theme(<span class="name">axis</span>.ticks.y = element_blank())+</span><br><span class="line">  theme(<span class="name">axis</span>.title.y=element_blank())+</span><br><span class="line">  theme(<span class="name">axis</span>.title.x=element_blank())+</span><br><span class="line">  theme(<span class="name">legend</span>.title=element_blank())+</span><br><span class="line">  scale_fill_gradient2(<span class="name">low</span> = <span class="string">"#5E4EA2"</span>, high = <span class="string">"#9E0041"</span>,mid=<span class="string">"#FBFCB5"</span>,midpoint=60)</span><br><span class="line">p+ geom_raster()</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>scale_fill_gradient2(low = &quot;#5E4EA2&quot;, high = &quot;#9E0041&quot;,mid=&quot;#FBFCB5&quot;,midpoint=60)</code>的命令中<br>|命令|作用|<br>|-|-|<br>|scale_fill_gradient2|三色渐变，由中间色、两端色渐变而成，此外还有scale_fill_gradient为两色渐变，scale_fill_gradientn为等间隔的n种颜色|<br>|low = “#5E4EA2”和high = “#9E0041”|根据取色器取到的两端的颜色|<br>|mid=”#FBFCB5”|中间的颜色|<br>|midpoint=60|设置中间点|</p>
+<p>得到的结果如下<br><img src="/images/2018-07/Rplot02.png" alt="heatmap3"></p>
 
       
     </div>
@@ -498,11 +511,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/技术/" rel="tag"># 技术</a>
-          
-            <a href="/tags/R/" rel="tag"># R</a>
-          
-            <a href="/tags/画图/" rel="tag"># 画图</a>
+            <a href="/tags/绘图/" rel="tag"># 绘图</a>
           
         </div>
       
@@ -515,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018-04-02-R安装.html" rel="next" title="Linux下安装R(心路历程版)">
-                <i class="fa fa-chevron-left"></i> Linux下安装R(心路历程版)
+              <a href="/2018-07-15-用BUSCO来进行基因组完整性评估.html" rel="next" title="用BUSCO来评估基因组完整性">
+                <i class="fa fa-chevron-left"></i> 用BUSCO来评估基因组完整性
               </a>
             
           </div>
@@ -524,10 +533,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018-04-09-Linux下源码安装R(干净版).html" rel="prev" title="Linux下源码安装R(干净版)">
-                Linux下源码安装R(干净版) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -855,7 +860,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 103391, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 103391, xid: "2018-04-02-ggplot箱线图之如何添加最大值最小值线(whisker-ends).html"});
+		_hcwp.push({widget:"Stream", widget_id: 103391, xid: "2018-07-26-用ggplot2绘制热图.html"});
 		
 
 		(function() {
