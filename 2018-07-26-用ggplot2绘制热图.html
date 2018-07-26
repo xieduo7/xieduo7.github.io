@@ -129,7 +129,7 @@
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-07/Rplot01.png">
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-07/9c3550fd-10d3-4110-b730-a5f74d3ade1e.png">
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-07/Rplot02.png">
-<meta property="og:updated_time" content="2018-07-26T04:17:13.413Z">
+<meta property="og:updated_time" content="2018-07-26T04:23:40.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用ggplot2绘制热图">
 <meta name="twitter:description" content="热图算是各种途中有点复杂的一类图，但是其实画起来并不难。本文中的代码参考了《R数据可视化手册》的13.6，并在此基础上加以改进。">
@@ -485,30 +485,30 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">代码</th>
-<th style="text-align:right">作用</th>
+<th style="text-align:center">代码</th>
+<th style="text-align:center">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">theme(panel.background = element_blank(),axis.line = element_line(colour=”black”))</td>
-<td style="text-align:right">将ggplot的默认的灰色背景去掉，坐标轴线为黑色</td>
+<td style="text-align:center">theme(panel.background = element_blank(),axis.line = element_line(colour=”black”))</td>
+<td style="text-align:center">将ggplot的默认的灰色背景去掉，坐标轴线为黑色</td>
 </tr>
 <tr>
-<td style="text-align:left">theme(axis.ticks.x = element_blank())</td>
-<td style="text-align:right">去掉X轴的轴须</td>
+<td style="text-align:center">theme(axis.ticks.x = element_blank())</td>
+<td style="text-align:center">去掉X轴的轴须</td>
 </tr>
 <tr>
-<td style="text-align:left">theme(axis.title.y=element_blank())</td>
-<td style="text-align:right">去掉y轴标题</td>
+<td style="text-align:center">theme(axis.title.y=element_blank())</td>
+<td style="text-align:center">去掉y轴标题</td>
 </tr>
 <tr>
-<td style="text-align:left">theme(legend.title=element_blank())</td>
-<td style="text-align:right">去掉图例的标题</td>
+<td style="text-align:center">theme(legend.title=element_blank())</td>
+<td style="text-align:center">去掉图例的标题</td>
 </tr>
 <tr>
-<td style="text-align:left">geom_raster()</td>
-<td style="text-align:right">绘制热图，也可用geom_tile()，但是geom_raster()效率更高</td>
+<td style="text-align:center">geom_raster()</td>
+<td style="text-align:center">绘制热图，也可用geom_tile()，但是geom_raster()效率更高</td>
 </tr>
 </tbody>
 </table>
@@ -517,26 +517,26 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:right">作用</th>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">scale_fill_gradient2</td>
-<td style="text-align:right">三色渐变，由中间色、两端色渐变而成，此外还有scale_fill_gradient为两色渐变，scale_fill_gradientn为等间隔的n种颜色</td>
+<td style="text-align:center">scale_fill_gradient2</td>
+<td style="text-align:center">三色渐变，由中间色、两端色渐变而成，此外还有scale_fill_gradient为两色渐变，scale_fill_gradientn为等间隔的n种颜色</td>
 </tr>
 <tr>
-<td style="text-align:left">low = “#5E4EA2”和high = “#9E0041”</td>
-<td style="text-align:right">根据取色器取到的两端的颜色</td>
+<td style="text-align:center">low = “#5E4EA2”和high = “#9E0041”</td>
+<td style="text-align:center">根据取色器取到的两端的颜色</td>
 </tr>
 <tr>
-<td style="text-align:left">mid=”#FBFCB5”</td>
-<td style="text-align:right">中间的颜色</td>
+<td style="text-align:center">mid=”#FBFCB5”</td>
+<td style="text-align:center">中间的颜色</td>
 </tr>
 <tr>
-<td style="text-align:left">midpoint=60</td>
-<td style="text-align:right">设置中间点</td>
+<td style="text-align:center">midpoint=60</td>
+<td style="text-align:center">设置中间点</td>
 </tr>
 </tbody>
 </table>
