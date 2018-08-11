@@ -1,4 +1,4 @@
-https://xieduo7.github.io/2018-08-11-滇行散记.html
+https://xieduo7.github.io/2018-08-11-滇行漫记.html
 https://xieduo7.github.io/2018-07-26-对特定的坐标轴标签进行颜色标记.html
 https://xieduo7.github.io/2018-07-26-用ggplot2绘制热图.html
 https://xieduo7.github.io/2018-07-15-用BUSCO来进行基因组完整性评估.html
