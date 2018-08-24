@@ -155,7 +155,7 @@
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-08/8.png">
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-08/9.png">
 <meta property="og:image" content="https://xieduo7.github.io/images/2018-08/10.png">
-<meta property="og:updated_time" content="2018-08-24T08:04:32.054Z">
+<meta property="og:updated_time" content="2018-08-24T08:06:47.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据可视化系列：导论及绘图的基本元素(ggplot2实现)">
 <meta name="twitter:description" content="数据可视化系列第一弹。">
@@ -618,15 +618,205 @@
 </tbody>
 </table>
 <p>如果想画散点图：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ggplot(<span class="name">data</span> = mpg) + </span><br><span class="line">  geom_point(<span class="name">mapping</span> = aes(<span class="name">x</span> = displ, y = hwy,color=class))+</span><br><span class="line">  theme_classic()+</span><br><span class="line">  scale_color_viridis(<span class="name">discrete=TRUE</span>)</span><br></pre></td></tr></table></figure></p>
-<p>其对应关系为<br>|命令|图形|<br>|-|-|<br>|data = &lt; DATA &gt; |data = mpg|<br>| &lt; GEOM_FUNCTION &gt;| 几何对象，geom_point(mapping = aes(x = displ, y = hwy,color=class))|<br>|stat = &lt; STAT &gt; |默认统计为stat=”identity”|<br>|position = &lt; POSITION &gt; |默认|<br>| &lt; COORDINATE_FUNCTION &gt; |无|<br>| &lt; FACET_FUNCTION &gt; |无|<br>| &lt; THEME_FUNCTION &gt; |theme_classic()+scale_color_viridis(discrete=TRUE)|</p>
+<p>其对应关系为</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">图形</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">data = &lt; DATA &gt;</td>
+<td style="text-align:center">data = mpg</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; GEOM_FUNCTION &gt;</td>
+<td style="text-align:center">几何对象，geom_point(mapping = aes(x = displ, y = hwy,color=class))</td>
+</tr>
+<tr>
+<td style="text-align:center">stat = &lt; STAT &gt;</td>
+<td style="text-align:center">默认统计为stat=”identity”</td>
+</tr>
+<tr>
+<td style="text-align:center">position = &lt; POSITION &gt;</td>
+<td style="text-align:center">默认</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; COORDINATE_FUNCTION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; FACET_FUNCTION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; THEME_FUNCTION &gt;</td>
+<td style="text-align:center">theme_classic()+scale_color_viridis(discrete=TRUE)</td>
+</tr>
+</tbody>
+</table>
 <p><img src="/images/2018-08/43d519c3-7d4b-449b-a3fb-2be1398ea879.png" alt="scatter2"><br>如果想画条形图：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ggplot(<span class="name">data</span> = diamonds) + </span><br><span class="line">  geom_bar(<span class="name">mapping=aes</span>(<span class="name">x=cut</span>,fill=cut))+</span><br><span class="line">  theme_classic()</span><br></pre></td></tr></table></figure></p>
-<p>其对应关系为<br>|命令|图形|<br>|-|-|<br>|data = &lt; DATA &gt; |data = diamonds|<br>| &lt; GEOM_FUNCTION &gt;| geom_bar(mapping=aes(x=cut,fill=cut))|<br>|stat = &lt; STAT &gt; |默认stat=”count”|<br>|position = &lt; POSITION &gt; |无|<br>| &lt; COORDINATE_FUNCTION &gt; |无|<br>| &lt; FACET_FUNCTION &gt; |无|<br>| &lt; THEME_FUNCTION &gt; |theme_classic()|</p>
+<p>其对应关系为</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">图形</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">data = &lt; DATA &gt;</td>
+<td style="text-align:center">data = diamonds</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; GEOM_FUNCTION &gt;</td>
+<td style="text-align:center">geom_bar(mapping=aes(x=cut,fill=cut))</td>
+</tr>
+<tr>
+<td style="text-align:center">stat = &lt; STAT &gt;</td>
+<td style="text-align:center">默认stat=”count”</td>
+</tr>
+<tr>
+<td style="text-align:center">position = &lt; POSITION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; COORDINATE_FUNCTION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; FACET_FUNCTION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; THEME_FUNCTION &gt;</td>
+<td style="text-align:center">theme_classic()</td>
+</tr>
+</tbody>
+</table>
 <p><img src="/images/2018-08/11.png" alt="bar2"><br>如果想画箱线图：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ggplot(<span class="name">data</span> = mpg,mapping=aes(<span class="name">x=class</span>,y=hwy)) + </span><br><span class="line">  stat_boxplot(<span class="name">geom</span> = <span class="string">"errorbar"</span>,width=0.<span class="number">15</span>)+</span><br><span class="line">  geom_boxplot(<span class="name">width=0</span>.<span class="number">3</span>)+</span><br><span class="line">  theme_classic()</span><br></pre></td></tr></table></figure></p>
-<p>对应关系为<br>|命令|图形|<br>|-|-|<br>|data = &lt; DATA &gt; |data = mpg|<br>| &lt; GEOM_FUNCTION &gt;| stat_boxplot(geom = “errorbar”,width=0.15)|<br>|stat = &lt; STAT &gt; |默认stat=”identity”|<br>|position = &lt; POSITION &gt; |无|<br>| &lt; COORDINATE_FUNCTION &gt; |无|<br>| &lt; FACET_FUNCTION &gt; |无|<br>| &lt; THEME_FUNCTION &gt; |theme_classic()|</p>
+<p>对应关系为</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">图形</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">data = &lt; DATA &gt;</td>
+<td style="text-align:center">data = mpg</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; GEOM_FUNCTION &gt;</td>
+<td style="text-align:center">stat_boxplot(geom = “errorbar”,width=0.15)</td>
+</tr>
+<tr>
+<td style="text-align:center">stat = &lt; STAT &gt;</td>
+<td style="text-align:center">默认stat=”identity”</td>
+</tr>
+<tr>
+<td style="text-align:center">position = &lt; POSITION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; COORDINATE_FUNCTION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; FACET_FUNCTION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; THEME_FUNCTION &gt;</td>
+<td style="text-align:center">theme_classic()</td>
+</tr>
+</tbody>
+</table>
 <p><img src="/images/2018-08/12.png" alt="box5"><br>直方图<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ggplot(<span class="name">data=diamonds</span>)+</span><br><span class="line">  geom_histogram(<span class="name">mapping=aes</span>(<span class="name">x=carat</span>),binwidth=0.<span class="number">5</span>)+</span><br><span class="line">  theme_classic()</span><br></pre></td></tr></table></figure></p>
-<p>对应关系<br>|命令|图形|<br>|-|-|<br>|data = &lt; DATA &gt; |data=diamonds|<br>| &lt; GEOM_FUNCTION &gt;| geom_histogram(mapping=aes(x=carat),binwidth=0.5)|<br>|stat = &lt; STAT &gt; |默认stat=”count”|<br>|position = &lt; POSITION &gt; |无|<br>| &lt; COORDINATE_FUNCTION &gt; |无|<br>| &lt; FACET_FUNCTION &gt; |无|<br>| &lt; THEME_FUNCTION &gt; |theme_classic()|</p>
+<p>对应关系</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">图形</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">data = &lt; DATA &gt;</td>
+<td style="text-align:center">data=diamonds</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; GEOM_FUNCTION &gt;</td>
+<td style="text-align:center">geom_histogram(mapping=aes(x=carat),binwidth=0.5)</td>
+</tr>
+<tr>
+<td style="text-align:center">stat = &lt; STAT &gt;</td>
+<td style="text-align:center">默认stat=”count”</td>
+</tr>
+<tr>
+<td style="text-align:center">position = &lt; POSITION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; COORDINATE_FUNCTION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; FACET_FUNCTION &gt;</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; THEME_FUNCTION &gt;</td>
+<td style="text-align:center">theme_classic()</td>
+</tr>
+</tbody>
+</table>
 <p><img src="/images/2018-08/13.png" alt="hist3"><br>甚至于热图<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">pres_rating</span> &lt;- <span class="class"><span class="keyword">data</span>.frame(</span></span><br><span class="line"><span class="class">  <span class="title">rating</span> = <span class="title">as</span>.<span class="title">numeric</span>(<span class="title">presidents</span>),</span></span><br><span class="line">  year = <span class="keyword">as</span>.numeric(floor(time(presidents))),</span><br><span class="line">  quarter = <span class="keyword">as</span>.numeric(cycle(presidents))</span><br><span class="line">)</span><br><span class="line"><span class="title">p</span> &lt;- ggplot(<span class="class"><span class="keyword">data</span>=pres_rating, mapping=aes(<span class="title">x</span>=<span class="title">year</span>, <span class="title">y</span>=<span class="title">quarter</span>, <span class="title">fill</span>=<span class="title">rating</span>))+</span></span><br><span class="line">  geom_raster()+</span><br><span class="line">  theme_classic()</span><br><span class="line"><span class="title">p</span></span><br></pre></td></tr></table></figure></p>
-<p>对应关系<br>|命令|图形|<br>|-|-|<br>|data = &lt; DATA &gt; |data=pres_rating|<br>| &lt; GEOM_FUNCTION &gt;| geom_raster()|<br>|stat = &lt; STAT &gt; |默认stat=”identity”|<br>|position = &lt; POSITION &gt; |无|<br>| &lt; COORDINATE_FUNCTION &gt; |无|<br>| &lt; FACET_FUNCTION &gt; |无|<br>| &lt; THEME_FUNCTION &gt; |theme_classic()|</p>
+<p>对应关系</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>图形</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data = &lt; DATA &gt;</td>
+<td>data=pres_rating</td>
+</tr>
+<tr>
+<td>&lt; GEOM_FUNCTION &gt;</td>
+<td>geom_raster()</td>
+</tr>
+<tr>
+<td>stat = &lt; STAT &gt;</td>
+<td>默认stat=”identity”</td>
+</tr>
+<tr>
+<td>position = &lt; POSITION &gt;</td>
+<td>无</td>
+</tr>
+<tr>
+<td>&lt; COORDINATE_FUNCTION &gt;</td>
+<td>无</td>
+</tr>
+<tr>
+<td>&lt; FACET_FUNCTION &gt;</td>
+<td>无</td>
+</tr>
+<tr>
+<td>&lt; THEME_FUNCTION &gt;</td>
+<td>theme_classic()</td>
+</tr>
+</tbody>
+</table>
 <p><img src="/images/2018-08/455cbe01-1956-4328-affe-a979d010f0bf.png" alt="hest"><br>所有的这些绘图都可以用统一的语法格式概括到一起,当然每个图形都有一些细微的参数不太一样，但是这依然给我们带来了很多便利，提高了我们对于数据与图表对应关系的理解，方便了我们画不同的图形。</p>
 <h1 id="四、基本的图形元素及使用原则"><a href="#四、基本的图形元素及使用原则" class="headerlink" title="四、基本的图形元素及使用原则"></a>四、基本的图形元素及使用原则</h1><p>坐标轴、轴须和坐标方格这些都属于导航元素(navigational elements), 这些导航元素提供了标准并帮助我们准确地获得长度以及比例的相关信息。这些元素在作图中需要保持以下原则：<br>1.总原则：必须与数据信息明显地区别开来，任何时候都要保持一个高 数据/墨水 比例，也就是说导航元素用尽可能少的墨水。下图fig 1a中由于没有将数据与线条区别开，导致读者很难快速从图中获得信息，而fig 1b则运用不同的颜色和透明度将数据与线条有效区分开，使人一目了然。</p>
 <p>2.坐标轴<br>(1)坐标轴线条的宽度应当适度，0.5pt（像素点）就够了。(2)除非图片特别大，否则不能将坐标轴置于画布的边缘。（3）不要在坐标轴上加箭头，因为坐标轴的方向从来都不用怀疑。（4）多个图片一起放置时应该保持坐标轴刻度统一，因为在多图片比较时坐标轴范围的变化很容易被忽略，从而引起误导。如果想保持统一性，可以使用坐标中断（axis breaks），但是有些杂志不允许使用坐标中断，并且坐标中断很可能会掩饰一些很重要的pattern。<br><img src="/images/2018-08/0183435f-d810-4e91-8b7c-a5a03974661c.png" alt="exm1"><br>3.轴须：轴须要尽可能地少，因为如果轴须太多会增加图形的复杂性和认知负担。<br><img src="/images/2018-08/5323f45b-741d-4af4-b9df-e1aed5329a60.png" alt="exm2"><br>4.坐标方格：坐标方格的使用常常就是用浅色线条来用于比较比例和坐标轴轴须的相对位置。<br>（1）横线越多，读者就会越意识到数据的轻微波动。但是不要错误地使用坐标网格，因为坐标网格太密集会影响读者对数据的准确判断。总的来说，当你不知道怎么使用坐标网格时就不要使用它。<br><img src="/images/2018-08/49db82cc-0253-4c04-a820-7dbf81bfe724.png" alt="exm3"><br>（2）坐标方格的颜色不能太深，否则会影响读者对数据的判断。建议网格不透明度在15%-45%之间，可以依数据密度来调整。<br><img src="/images/2018-08/f3d79836-96ca-4672-888e-c8bf35f6f01b.png" alt="exm4"><br>5.基本图形原则<code>ggplot2</code>的实现<br>下面就运用以上的原则来用<code>ggplot2</code>进行实践，比方说如果我想画一个条形图，<br>一开始画图是这样的<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ggplot(<span class="name">data=diamonds</span>)+</span><br><span class="line">  geom_bar(<span class="name">mapping=aes</span>(<span class="name">x=cut</span>,y=..count..,fill=cut))+</span><br><span class="line">  coord_flip()</span><br></pre></td></tr></table></figure></p>
