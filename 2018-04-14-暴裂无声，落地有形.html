@@ -384,17 +384,15 @@
 
           
             
-            <!--noindex-->
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018-04-14-暴裂无声，落地有形.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018-04-14-暴裂无声，落地有形.html" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018-04-14-暴裂无声，落地有形.html" itemprop="commentCount"></span>
                 </a>
               </span>
-              <!--/noindex-->
             
           
 
@@ -467,12 +465,12 @@
         <p>我翻开历史一查，这历史没有年代，歪歪斜斜的每叶上都写着“仁义道德”几个字。我横竖睡不着，仔细看了半夜，才从字缝里看出字来，满本都写着两个字是“吃人”！ ——鲁迅《狂人日记》<br><img src="/images/2018-04/大佛普拉斯.jpg" alt="《大佛普拉斯》海报"><br><a id="more"></a><br>内含一定剧透，建议先看完电影再继续往下看</p>
 <hr>
 <p>在开始看文章前，建议点开下面这首音乐，这是《大佛普拉斯》的片尾曲，名字叫做《有无》，在第54届金马奖上获得了<strong>最佳原创电影歌曲</strong>（当然，《大佛普拉斯》的原声配乐也很好听，强烈推荐看完电影后去网易云上听一听，btw，其中评论数最高的那首配乐的最热评论就是我写的，我就不说具体哪一首了）。<br>
-        <div id="aplayer-bCofdZIf" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-sqqQbKpH" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-bCofdZIf"),
+            element: document.getElementById("aplayer-sqqQbKpH"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -571,9 +569,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="hypercomments_widget"></div>
     </div>
-
   
 
 
@@ -887,27 +883,17 @@
 
 	
 
-		<script type="text/javascript">
-		_hcwp = window._hcwp || [];
 
-		_hcwp.push({widget:"Bloggerstream", widget_id: 103391, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
-		
-		_hcwp.push({widget:"Stream", widget_id: 103391, xid: "2018-04-14-暴裂无声，落地有形.html"});
-		
 
-		(function() {
-		if("HC_LOAD_INIT" in window)return;
-		HC_LOAD_INIT = true;
-		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
-		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
-		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/103391/"+lang+"/widget.js";
-		var s = document.getElementsByTagName("script")[0];
-		s.parentNode.insertBefore(hcc, s.nextSibling);
-		})();
-		</script>
 
-	
+  
+
+
+
+
+
+  
 
 
 
@@ -918,9 +904,27 @@
 
 
 
-
-
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'EAf69dE7wQz47DmFqjeIvE8B-gzGzoHsz',
+        appKey: 'atizoou5sUsqHjtoSlx2shaw',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
