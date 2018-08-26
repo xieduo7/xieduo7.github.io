@@ -1,5 +1,5 @@
+https://xieduo7.github.io/2018-08-26-github+hexo建站资源汇总(不断更新).html
 https://xieduo7.github.io/2018-08-25-认识拖延.html
 https://xieduo7.github.io/2018-08-24-数据可视化系列：导论及绘图的基本元素.html
 https://xieduo7.github.io/2018-08-11-滇行漫记.html
 https://xieduo7.github.io/2018-07-26-对特定的坐标轴标签进行颜色标记.html
-https://xieduo7.github.io/2018-07-26-用ggplot2绘制热图.html
