@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Mr. Blue Sky">
 <meta property="og:description" content="我：如何从NCBI批量下载数据？鸨：找叶老啊！我：打扰了！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T15:02:57.094Z">
+<meta property="og:updated_time" content="2018-09-06T03:38:52.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="批量从NCBI下载基因序列(进化版)">
 <meta name="twitter:description" content="我：如何从NCBI批量下载数据？鸨：找叶老啊！我：打扰了！">
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,209
+                  1,237
                 </span>
               
 
@@ -478,7 +478,7 @@
       
 
       
-        <p>我：如何从NCBI批量下载数据？<br>鸨：找叶老啊！<br>我：打扰了！<br><a id="more"></a><br>之前在一篇文章中<a href="/2018-06-25-批量从NCBI下载指定物种中指定基因的序列.html" title="批量从NCBI下载指定物种中指定基因的序列">批量从NCBI下载指定物种中指定基因的序列</a>介绍用<code>NCBI</code>的<code>Batch Entrez</code>来批量下载序列，那种方法确实很方便，但是那种方法需要我们先通过NCBI网页端下载得到<code>ID</code>的列表，然后用列表来批量下载序列。如果我只有一个基因，那么这样下载起来还算方便，但是如果我有n个基因然后想下载n个基因在m个不同物种当中的序列，那么用这种方法我起码要先在NCBI中搜索n次，但是我不想搜索n次，我只想一步到位，动一动手指一切尽在我的掌握之中。<br><code>NCBI</code>除了之前介绍的<code>Batch Entrez</code>之外，还有另外一个比较好用的api工具<a href="https://www.ncbi.nlm.nih.gov/books/NBK25501/" target="_blank" rel="noopener">Entrez Programming Utilities</a>,这个工具主要依托于<code>perl</code>，安装方法可<a href="https://blog.csdn.net/sunchengquan/article/details/78586870" target="_blank" rel="noopener">参考</a>但是今天我在<code>perl</code>上面尝试了一下，总是报错,恰好我在<code>Biopython</code>里面也有这个<a href="http://biopython.org/DIST/docs/tutorial/Tutorial.html#htoc120" target="_blank" rel="noopener">api的模块</a>,于是干脆用<code>Biopython</code>。<br>经过一番研究后，我发现可以这么做：</p>
+        <p>我：如何从NCBI批量下载数据？<br>鸨：找叶老啊！<br>我：打扰了！<br><a id="more"></a><br>之前在一篇文章中<a href="/2018-06-25-批量从NCBI下载指定物种中指定基因的序列.html" title="批量从NCBI下载指定物种中指定基因的序列">批量从NCBI下载指定物种中指定基因的序列</a>介绍用<code>NCBI</code>的<code>Batch Entrez</code>来批量下载序列，那种方法确实很方便，但是那种方法需要我们先通过NCBI网页端下载得到<code>ID</code>的列表，然后用列表来批量下载序列。如果我只有一个基因，那么这样下载起来还算方便，但是如果我有n个基因然后想下载n个基因在m个不同物种当中的序列，那么用这种方法我起码要先在NCBI中搜索n次，但是我不想搜索n次，我只想一步到位，即利用一个关键词就得到所有我需要的结果。<br><code>NCBI</code>除了之前介绍的<code>Batch Entrez</code>之外，还有另外一个比较好用的api工具<a href="https://www.ncbi.nlm.nih.gov/books/NBK25501/" target="_blank" rel="noopener">Entrez Programming Utilities</a>,这个工具主要依托于<code>perl</code>，安装方法可<a href="https://blog.csdn.net/sunchengquan/article/details/78586870" target="_blank" rel="noopener">参考</a>但是今天我在<code>perl</code>上面尝试了一下，总是报错,恰好我在<code>Biopython</code>里面也有这个<a href="http://biopython.org/DIST/docs/tutorial/Tutorial.html#htoc120" target="_blank" rel="noopener">api的模块</a>,于是干脆用<code>Biopython</code>。<br>经过一番研究后，我发现可以这么做：</p>
 <h1 id="确认搜索语法"><a href="#确认搜索语法" class="headerlink" title="确认搜索语法"></a>确认搜索语法</h1><p>先在NCBI中搜索下，确认下搜索语法，比方说我想在NCBI的<code>nucleotide</code>数据库中搜索鸟类中的VAPA基因，那么我先在NCBI的搜索框中输入<code>VAPA avian</code>，然后可以看见在NCBI的右侧有搜索语法显示<code>(VAPA[All Fields] AND (&quot;Aves&quot;[Organism] OR avian[All Fields])) AND biomol_mrna[PROP]</code></p>
 <h1 id="用Esearch获得符合条件的数据列表"><a href="#用Esearch获得符合条件的数据列表" class="headerlink" title="用Esearch获得符合条件的数据列表"></a>用<code>Esearch</code>获得符合条件的数据列表</h1><p>于是我们可以先用<code>Esearch</code>来搜索得到所有的id列表<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Bio import Entrez</span><br><span class="line">Entrez.email = <span class="string">"history.user@example.com"</span> # Always tell NCBI who you are</span><br><span class="line">search_handle = Entrez.esearch(<span class="attribute">db</span>=<span class="string">"nucleotide"</span>,term="(VAPA[All Fields] <span class="keyword">AND</span> (\<span class="string">"Aves\"[Organism] OR avian[All Fields])) AND biomol_mrna[PROP]"</span>,<span class="attribute">usehistory</span>=<span class="string">"y"</span>, <span class="attribute">idtype</span>=<span class="string">"acc"</span>)</span><br><span class="line">search_results = Entrez.read(search_handle)</span><br><span class="line">search_handle.close()</span><br></pre></td></tr></table></figure></p>
 <p><code>Esearch</code>的功能是通过特定关键词在数据库中进行检索，返回符合条件的条目的列表。我们需要修改的地方是<code>Entrez.email</code>, Entrez.esearch里的<code>term</code>。</p>
@@ -582,7 +582,7 @@
 </tr>
 </tbody>
 </table>
-<p>运行以上代码后，就可以下载nucleotide数据库中所有鸟类的<code>VAPA</code>基因的<code>mRNA</code>序列，我检查了一下，用这个脚本下载下来的序列数量和序列与直接从NCBI网页端下载下来的相同。</p>
+<p>运行以上代码后，就可以下载nucleotide数据库中所有鸟类的<code>VAPA</code>基因的<code>mRNA</code>序列，我检查了一下，用这个脚本下载下来的序列数量和序列与直接从NCBI网页端下载下来的相同。<br>另外我根据上面的代码写了一个脚本，现在已经上传到<a href="https://github.com/xieduo7/my_script/blob/master/ncbi/ncbi_download.py" target="_blank" rel="noopener">github</a>。</p>
 
       
     </div>
